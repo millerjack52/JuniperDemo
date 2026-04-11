@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Juniper Hotel &amp; Bistro — Concept</title>
+    <meta
+      name="description"
+      content="Juniper Hotel &amp; Bistro — mountain hospitality and dining in Banff."
+    />
+    <link rel="stylesheet" href="dist/styles.css" />
+  </head>
+  <body class="overflow-x-hidden font-sans antialiased text-juniper-charcoal">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header: modular partial — swap `data-scrolled` via JS -->
+    <header
+      id="site-header"
+      class="site-header"
+      data-scrolled="false"
+      role="banner"
+    >
+      <nav
+        class="page-shell grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-1.5 md:gap-6 md:py-2"
+        aria-label="Primary"
+      >
+        <div
+          class="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-2 md:gap-x-6 lg:gap-x-8"
+        >
+          <a
+            href="tel:14037622281"
+            class="header-phone shrink-0 text-[11px] font-normal uppercase tracking-wide md:text-xs"
+            >1-403-762-2281</a
+          >
+          <button
+            type="button"
+            class="header-icon-btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors"
+            aria-label="Search"
+          >
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3-3" stroke-linecap="round" />
+            </svg>
+          </button>
+          <div
+            class="hidden items-center gap-4 uppercase tracking-wide md:flex lg:gap-6"
+          >
+            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="room.html"
+              >Stay</a
+            >
+            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+              >Experiences</a
+            >
+            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+              >Events</a
+            >
+          </div>
+        </div>
+
+        <a
+          href="/"
+          class="justify-self-center outline-offset-4 focus-visible:outline focus-visible:outline-2"
+        >
+          <img
+            src="images/JuniperLogoHeader.png"
+            width="720"
+            height="240"
+            class="h-[56px] w-auto md:h-[64px] lg:h-[68px]"
+            alt="Juniper Hotel"
+          />
+        </a>
+
+        <div
+          class="flex min-w-0 flex-wrap items-center justify-end gap-3 md:gap-5 lg:gap-6"
+        >
+          <div
+            class="hidden items-center gap-4 uppercase tracking-wide md:flex lg:gap-6"
+          >
+            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+              >About</a
+            >
+            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+              >Stories</a
+            >
+            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#bistro"
+              >Bistro</a
+            >
+          </div>
+          <a
+            class="header-book-btn inline-flex h-9 shrink-0 items-center justify-center rounded-full px-5 text-[11px] font-bold uppercase tracking-wide transition-colors md:text-xs"
+            href="#"
+            >Book</a
+          >
+          <button
+            type="button"
+            class="header-icon-btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="flex flex-col gap-[5px]" aria-hidden="true">
+              <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+              <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+              <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+            </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero: modular section -->
+      <section
+        class="hero relative flex min-h-screen flex-col justify-center overflow-hidden pb-24 pt-28 md:pb-28 md:pt-32"
+        aria-labelledby="hero-heading"
+      >
+        <div
+          class="hero__bg-image"
+          role="img"
+          aria-label="Moraine Lake, Banff National Park"
+        ></div>
+        <div
+          class="pointer-events-none absolute inset-0 z-0 bg-black/50"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative z-[1] page-shell">
+          <div
+            class="max-w-xl text-left sm:max-w-2xl md:max-w-2xl lg:max-w-3xl"
+          >
+            <p
+              class="mb-4 text-[11px] font-normal uppercase tracking-[0.35em] text-white/85 md:mb-5 md:text-xs"
+            >
+              Juniper Hotel
+            </p>
+            <h1
+              id="hero-heading"
+              class="font-serif text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl sm:leading-[1.06] md:text-6xl md:leading-[1.05] lg:text-7xl lg:leading-[1.03]"
+            >
+              Stay where the<br />
+              mountains lead<br />
+              the way.
+            </h1>
+            <p
+              class="mt-6 max-w-xl font-serif text-base italic leading-relaxed text-white/90 md:mt-7 md:text-lg"
+            >
+              Mountain hospitality and bistro dining at the edge of Banff — calm
+              rooms, honest food, and views that stay with you.
+            </p>
+            <div class="mt-8 inline-flex h-11 w-11 shrink-0 items-center justify-center md:mt-10 md:h-12 md:w-12">
+              <img
+                src="images/hotelAward.png"
+                width="1080"
+                height="1350"
+                class="max-h-full max-w-full object-contain opacity-95"
+                alt="Tripadvisor Travellers’ Choice Best of the Best 2025"
+              />
+            </div>
+            <div class="mt-8 md:mt-10">
+              <a
+                class="inline-flex items-center justify-center bg-juniper-teal px-10 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-12 md:text-xs md:tracking-[0.2em]"
+                href="#rooms-booking"
+                >Book now</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rooms & booking -->
+      <section
+        id="rooms-booking"
+        class="bg-juniper-cream py-16 md:py-20 lg:py-24"
+        aria-labelledby="rooms-heading"
+      >
+        <div class="page-shell space-y-12 md:space-y-14">
+          <div class="text-center">
+            <p
+              class="mb-4 text-[11px] font-normal uppercase tracking-[0.35em] text-slate-600 md:text-xs"
+            >
+              Juniper Hotel
+            </p>
+            <h2
+              id="rooms-heading"
+              class="font-serif text-4xl font-normal tracking-tight md:text-5xl"
+            >
+              <a
+                class="text-slate-900 transition-colors hover:text-juniper-indigo"
+                href="room.html"
+                >Rooms &amp; suites</a
+              >
+            </h2>
+            <p
+              class="mx-auto mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-700 md:text-lg"
+            >
+              Designed to be a silent witness to the majesty of the Rockies. Each
+              space is a study in texture, warmth, and deliberate simplicity —
+              serene rooms with panoramic views over Banff.
+            </p>
+          </div>
+
+          <div
+            class="border-t-[3px] border-juniper-teal bg-white px-6 py-8 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] md:px-10 md:py-10 lg:px-12"
+          >
+            <h3 class="font-serif text-2xl font-normal text-slate-900 md:text-[1.65rem]">
+              Plan your stay
+            </h3>
+            <div class="mt-6 border-t border-stone-200"></div>
+
+            <form class="mt-8" action="#" method="get">
+              <div
+                class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10"
+              >
+                <div class="text-left">
+                  <label
+                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    for="check-in"
+                    >Check in</label
+                  >
+                  <div class="relative">
+                    <input
+                      id="check-in"
+                      name="check-in"
+                      type="text"
+                      class="booking-field-input"
+                      placeholder="dd / mm / yyyy"
+                      autocomplete="off"
+                    />
+                    <span
+                      class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
+                      aria-hidden="true"
+                    >
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <path d="M3 10h18M8 2v4M16 2v4" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-left">
+                  <label
+                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    for="check-out"
+                    >Check out</label
+                  >
+                  <div class="relative">
+                    <input
+                      id="check-out"
+                      name="check-out"
+                      type="text"
+                      class="booking-field-input"
+                      placeholder="dd / mm / yyyy"
+                      autocomplete="off"
+                    />
+                    <span
+                      class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
+                      aria-hidden="true"
+                    >
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <path d="M3 10h18M8 2v4M16 2v4" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-left">
+                  <label
+                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    for="guests"
+                    >Guests</label
+                  >
+                  <div class="relative">
+                    <select id="guests" name="guests" class="booking-field-select">
+                      <option value="1">1 guest</option>
+                      <option value="2" selected>2 guests</option>
+                      <option value="3">3 guests</option>
+                      <option value="4">4 guests</option>
+                      <option value="5">5+ guests</option>
+                    </select>
+                    <span
+                      class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
+                      aria-hidden="true"
+                    >
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-left">
+                  <label
+                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    for="special-code"
+                    >Special code</label
+                  >
+                  <input
+                    id="special-code"
+                    name="special-code"
+                    type="text"
+                    class="booking-field-input pr-0"
+                    placeholder="Optional"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="mt-10 flex flex-col items-stretch gap-6 border-t border-stone-100 pt-8 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <button
+                  type="submit"
+                  class="inline-flex w-full items-center justify-center bg-juniper-teal px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 sm:w-auto md:px-10 md:text-xs md:tracking-[0.2em]"
+                >
+                  Check availability
+                </button>
+                <p
+                  class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 sm:text-right md:text-[11px]"
+                >
+                  Prefer to call?
+                  <a class="text-slate-800 underline-offset-2 hover:underline" href="tel:14037622281"
+                    >1-403-762-2281</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Room options -->
+      <section
+        id="room-options"
+        class="bg-white py-16 md:py-20 lg:py-24"
+        aria-labelledby="room-options-heading"
+      >
+        <div class="page-shell">
+          <h2 id="room-options-heading" class="sr-only">Room options</h2>
+
+          <div class="flex items-start gap-2 sm:gap-4 md:gap-6">
+            <button
+              type="button"
+              class="room-options__prev mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-stone-200 bg-white text-slate-400 shadow-sm transition-colors hover:border-stone-300 hover:text-slate-600 md:mt-0.5 md:h-11 md:w-11"
+              aria-label="Previous room type"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div class="room-options__tab-strip min-w-0 flex-1">
+              <div
+                class="grid grid-cols-3 gap-2 sm:gap-3"
+                role="tablist"
+                aria-label="Room categories"
+              >
+                <button type="button" id="room-tab-0" role="tab" aria-selected="true">
+                  King fireplace suite
+                </button>
+                <button type="button" id="room-tab-1" role="tab" aria-selected="false">
+                  Suite pairs
+                </button>
+                <button type="button" id="room-tab-2" role="tab" aria-selected="false">
+                  Alpine studio
+                </button>
+              </div>
+              <div class="relative mt-3 w-full" aria-hidden="true">
+                <div class="h-px w-full bg-stone-200"></div>
+                <div class="room-options__progress"></div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="room-options__next mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-stone-200 bg-white text-slate-400 shadow-sm transition-colors hover:border-stone-300 hover:text-slate-600 md:mt-0.5 md:h-11 md:w-11"
+              aria-label="Next room type"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div
+            class="room-options__panel mt-10 md:mt-12"
+            role="tabpanel"
+            id="room-options-panel"
+            aria-labelledby="room-tab-0"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Bistro -->
+      <section
+        id="bistro"
+        class="bg-juniper-cream py-16 md:py-20 lg:py-24"
+        aria-labelledby="bistro-heading"
+      >
+        <div class="page-shell">
+          <div class="mx-auto max-w-3xl text-center">
+            <p
+              class="mb-4 text-[11px] font-normal uppercase tracking-[0.32em] text-slate-600 md:text-xs"
+            >
+              Juniper Hotel &amp; Bistro
+            </p>
+            <h2
+              id="bistro-heading"
+              class="font-serif text-4xl font-normal tracking-tight text-slate-900 md:text-5xl"
+            >
+              Juniper Bistro
+            </h2>
+            <p
+              class="mx-auto mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-700 md:text-lg"
+            >
+              A relaxed dining room where the Rockies meet the plate — honest
+              cooking, warm service, and a wine list chosen for long evenings
+              after the trails.
+            </p>
+          </div>
+
+          <div
+            class="mt-12 grid gap-10 md:mt-14 lg:grid-cols-2 lg:items-center lg:gap-14 xl:gap-16"
+          >
+            <div
+              class="overflow-hidden rounded-sm shadow-[0_16px_48px_-12px_rgba(0,0,0,0.12)] lg:order-1"
+            >
+              <img
+                class="block aspect-[4/3] h-full w-full object-cover lg:aspect-[5/4]"
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                width="1600"
+                height="1200"
+                alt="Guests dining in a warmly lit bistro interior"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="lg:order-2">
+              <p
+                class="text-base font-light leading-relaxed text-slate-600 md:text-[1.05rem]"
+              >
+                Tucked into the hotel, Juniper Bistro is our answer to mountain
+                appetite: seasonal menus built from Alberta producers, classic
+                technique, and the occasional surprise from the chargrill.
+                Breakfast fuels early hikes; dinner slows down with shared
+                plates, mains, and desserts you will talk about on the gondola
+                the next day.
+              </p>
+
+              <ul class="mt-8 space-y-4 text-sm text-slate-700 md:text-base">
+                <li class="flex gap-3">
+                  <span class="mt-0.5 shrink-0 text-slate-400" aria-hidden="true"
+                    >◇</span
+                  >
+                  <span
+                    ><span class="font-bold uppercase tracking-wide text-slate-800"
+                      >Hours</span
+                    >
+                    — Breakfast daily 7–11 · Dinner Wed–Sun 5–10</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-0.5 shrink-0 text-slate-400" aria-hidden="true"
+                    >◇</span
+                  >
+                  <span
+                    ><span class="font-bold uppercase tracking-wide text-slate-800"
+                      >Style</span
+                    >
+                    — Casual refinement; families and couples welcome</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-0.5 shrink-0 text-slate-400" aria-hidden="true"
+                    >◇</span
+                  >
+                  <span
+                    ><span class="font-bold uppercase tracking-wide text-slate-800"
+                      >Dietary</span
+                    >
+                    — Vegetarian options; ask your server about allergies</span
+                  >
+                </li>
+              </ul>
+
+              <div
+                class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
+              >
+                <a
+                  class="inline-flex items-center justify-center bg-juniper-teal px-8 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-10 md:text-xs md:tracking-[0.2em]"
+                  href="tel:14037622281"
+                  >Reserve a table</a
+                >
+                <a
+                  class="inline-flex items-center justify-center border border-juniper-indigo/45 px-8 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-juniper-indigo transition-colors hover:border-juniper-indigo hover:bg-juniper-indigo hover:text-white md:px-10 md:text-xs md:tracking-[0.2em]"
+                  href="#"
+                  >View menu</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social / Instagram -->
+      <section
+        id="social"
+        class="bg-white py-16 md:py-20 lg:py-24"
+        aria-labelledby="social-heading"
+      >
+        <div class="page-shell">
+          <div class="mx-auto max-w-3xl text-center">
+            <p
+              class="mb-4 text-[11px] font-normal uppercase tracking-[0.35em] text-slate-500 md:text-xs"
+            >
+              Social
+            </p>
+            <h2
+              id="social-heading"
+              class="font-serif text-4xl font-normal tracking-tight text-slate-900 md:text-5xl"
+            >
+              On Instagram
+            </h2>
+            <p
+              class="mx-auto mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-700 md:text-lg"
+            >
+              Follow along for seasonal menus, trail weather, and quiet moments
+              from the ridge — live from @juniperbanff.
+            </p>
+          </div>
+
+          <div
+            class="mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-2 sm:gap-3 md:mt-14 md:gap-4 sm:max-w-3xl md:max-w-4xl lg:max-w-5xl"
+          >
+            <img
+              class="aspect-square w-full rounded-sm object-cover"
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
+              width="900"
+              height="900"
+              alt="Plated dish with greens on a wooden table"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              class="aspect-square w-full rounded-sm object-cover"
+              src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
+              width="900"
+              height="900"
+              alt="Outdoor swimming pool at dusk"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              class="aspect-square w-full rounded-sm object-cover"
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
+              width="900"
+              height="900"
+              alt="Mountain peaks above a sea of clouds"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              class="aspect-square w-full rounded-sm object-cover"
+              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
+              width="900"
+              height="900"
+              alt="Hotel room with bed and fireplace"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <p class="mt-10 text-center md:mt-12">
+            <a
+              class="text-[11px] font-bold uppercase tracking-[0.28em] text-juniper-indigo underline decoration-juniper-lavender/80 underline-offset-[6px] transition-colors hover:text-juniper-purple md:text-xs md:tracking-[0.32em]"
+              href="https://www.instagram.com/juniperbanff/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Follow @juniperbanff</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA: story + reserve -->
+      <section
+        class="relative isolate overflow-hidden bg-juniper-forest py-16 md:py-20 lg:py-24"
+        aria-labelledby="cta-story-heading"
+      >
+        <div class="juniper-cta-pattern" aria-hidden="true"></div>
+        <div class="page-shell relative z-10 text-center">
+          <h2
+            id="cta-story-heading"
+            class="mx-auto max-w-3xl font-serif text-3xl font-normal leading-[1.2] tracking-tight text-white md:text-4xl md:leading-[1.15] lg:max-w-4xl lg:text-[2.65rem]"
+          >
+            Begin your own story in the heart<br />
+            of the Rockies.
+          </h2>
+          <a
+            class="mt-8 inline-flex items-center justify-center bg-white px-9 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-juniper-teal transition-opacity hover:opacity-90 md:mt-10 md:px-12 md:text-xs md:tracking-[0.22em]"
+            href="#rooms-booking"
+            >Reserve your stay</a
+          >
+        </div>
+      </section>
+
+      <!-- Guest reviews -->
+      <section
+        id="guest-reviews"
+        class="bg-juniper-cream py-16 md:py-20 lg:py-24"
+        aria-labelledby="reviews-heading"
+      >
+        <div class="page-shell">
+          <div class="mx-auto max-w-3xl text-center">
+            <p
+              class="mb-4 text-[11px] font-normal uppercase tracking-[0.32em] text-slate-500 md:text-xs"
+            >
+              Guest reviews
+            </p>
+            <h2
+              id="reviews-heading"
+              class="font-serif text-4xl font-normal tracking-tight text-slate-900 md:text-5xl"
+            >
+              See what our past guests have to say
+            </h2>
+            <p
+              class="mx-auto mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-600 md:text-lg"
+            >
+              Travelers share what stood out — from valley views to the Bistro.
+            </p>
+          </div>
+
+          <div
+            class="mt-12 flex items-stretch gap-2 sm:mt-14 sm:gap-4 md:items-center"
+          >
+            <button
+              type="button"
+              data-reviews-prev
+              class="inline-flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-stone-200 bg-white text-slate-400 shadow-sm transition-[opacity,colors] hover:border-stone-300 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-35 sm:h-11 sm:w-11"
+              aria-label="Show previous reviews"
+              aria-controls="reviews-scroller"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div
+              id="reviews-scroller"
+              class="scrollbar-none flex min-w-0 flex-1 snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden scroll-smooth py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:snap-none lg:gap-8"
+              tabindex="0"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Guest reviews"
+            >
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  Waking up to that view never got old. Quiet rooms, thoughtful
+                  details, and the shuttle made downtown easy after long hikes.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                    Morgan K.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  Bistro exceeded expectations — warm service and a wine list
+                  that matched the mountains outside the windows.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                    Alex P.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  We loved the hot tub after skiing and the staff&apos;s
+                  recommendations for quieter trails. Felt like a small lodge,
+                  not a big chain.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                    Samira L.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  Front desk helped us pivot when the weather turned — new
+                  trails, same sunset. Room was spotless every night.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                    Jordan T.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  Coffee in the Bistro before dawn, then the gondola — exactly
+                  the pace we needed for our anniversary week in the Rockies.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                    Elena R.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <button
+              type="button"
+              data-reviews-next
+              class="inline-flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-stone-200 bg-white text-slate-400 shadow-sm transition-[opacity,colors] hover:border-stone-300 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-35 sm:h-11 sm:w-11"
+              aria-label="Show more reviews"
+              aria-controls="reviews-scroller"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="site-footer"
+      class="border-t border-stone-200/80 bg-white"
+      role="contentinfo"
+    >
+      <div class="page-shell py-14 md:py-16 lg:py-20">
+        <div
+          class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:grid-cols-4 lg:gap-10"
+        >
+          <!-- Newsletter -->
+          <div class="md:col-span-2 lg:col-span-1">
+            <p
+              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+            >
+              Newsletter
+            </p>
+            <p
+              class="mt-3 font-serif text-xl italic leading-snug text-slate-900 md:text-2xl"
+            >
+              Inspiration in your inbox
+            </p>
+            <form class="mt-6 flex max-w-md border border-stone-300 bg-white" action="#" method="post">
+              <label for="footer-email" class="sr-only">Email address</label>
+              <input
+                id="footer-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Email Address"
+                class="min-w-0 flex-1 border-0 bg-transparent px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-inset focus:ring-juniper-purple/35"
+              />
+              <button
+                type="submit"
+                class="inline-flex shrink-0 items-center justify-center border-l border-stone-200 px-4 text-slate-600 transition-colors hover:bg-juniper-cream/70 hover:text-slate-900"
+                aria-label="Subscribe to newsletter"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </form>
+            <div class="mt-6 flex flex-wrap items-center gap-5 text-slate-600">
+              <a
+                href="#"
+                class="inline-flex transition-opacity hover:opacity-70"
+                aria-label="TripAdvisor"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/tripadvisor/00AF87"
+                  width="24"
+                  height="24"
+                  class="h-6 w-6"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/juniperbanff/"
+                class="transition-opacity hover:opacity-70"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <path d="M17.5 6.5h.01" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="transition-opacity hover:opacity-70"
+                aria-label="Location and directions"
+              >
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </a>
+            </div>
+            <a
+              href="#"
+              class="mt-6 inline-flex rounded-full border border-stone-400 bg-white px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-800 transition-colors hover:border-slate-600 hover:bg-juniper-cream/60 md:text-[11px]"
+              >Accessibility</a
+            >
+          </div>
+
+          <!-- Explore -->
+          <div>
+            <p
+              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+            >
+              Explore
+            </p>
+            <ul class="mt-5 space-y-3 text-sm text-slate-800">
+              <li><a class="transition-colors hover:text-juniper-purple" href="room.html">Stay</a></li>
+              <li><a class="transition-colors hover:text-juniper-purple" href="#">Experiences</a></li>
+              <li><a class="transition-colors hover:text-juniper-purple" href="#">Events</a></li>
+              <li><a class="transition-colors hover:text-juniper-purple" href="#bistro">Dine</a></li>
+              <li><a class="transition-colors hover:text-juniper-purple" href="#">Meetings</a></li>
+            </ul>
+          </div>
+
+          <!-- Learn -->
+          <div>
+            <p
+              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+            >
+              Learn
+            </p>
+            <ul class="mt-5 space-y-3 text-sm text-slate-800">
+              <li><a class="transition-colors hover:text-juniper-purple" href="#">About us</a></li>
+              <li><a class="transition-colors hover:text-juniper-purple" href="#">Stories</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="md:col-span-2 lg:col-span-1">
+            <p
+              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+            >
+              Contact
+            </p>
+            <address class="mt-5 not-italic">
+              <p class="text-sm leading-relaxed text-slate-800">
+                1 Juniper Way<br />
+                Banff, Alberta T1L 1E1
+              </p>
+              <p class="mt-4 text-sm">
+                <a class="text-slate-800 transition-colors hover:text-juniper-purple" href="tel:18007622281"
+                  >1-800-762-2281</a
+                >
+              </p>
+              <p class="mt-2 text-sm">
+                <a
+                  class="text-slate-800 underline-offset-2 transition-colors hover:text-juniper-purple hover:underline"
+                  href="mailto:info@thejuniper.com"
+                  >info@thejuniper.com</a
+                >
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 flex flex-col gap-4 border-t border-stone-300 pt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:mt-16 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-6 md:text-[11px]"
+        >
+          <p class="text-slate-600">© 2026 The Juniper Hotel</p>
+          <ul class="flex flex-wrap gap-x-6 gap-y-2 md:justify-end">
+            <li>
+              <a class="transition-colors hover:text-juniper-indigo" href="#">Privacy policy</a>
+            </li>
+            <li>
+              <a class="transition-colors hover:text-juniper-indigo" href="#">Terms &amp; conditions</a>
+            </li>
+            <li>
+              <a class="transition-colors hover:text-juniper-indigo" href="#">Cookie policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/header-scroll.js" defer></script>
+    <script src="js/room-options.js" defer></script>
+    <script src="js/reviews-carousel.js" defer></script>
+  </body>
+</html>
