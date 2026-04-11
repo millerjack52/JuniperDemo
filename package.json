@@ -2,7 +2,7 @@
   "name": "juniper-design-concept",
   "private": true,
   "scripts": {
-    "build": "npm run build:css",
+    "build": "node scripts/build-public.js",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
     "watch:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch"
   },
