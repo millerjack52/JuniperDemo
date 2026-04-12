@@ -16,12 +16,12 @@
     <!-- Header: modular partial — swap `data-scrolled` via JS -->
     <header
       id="site-header"
-      class="site-header"
-      data-scrolled="false"
+      class="site-header py-6"
+      data-scrolled="true"
       role="banner"
     >
       <nav
-        class="page-shell grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-1.5 md:gap-6 md:py-2"
+        class="page-shell grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-1 md:gap-6"
         aria-label="Primary"
       >
         <div
@@ -29,10 +29,10 @@
         >
           <a
             href="tel:14037622281"
-            class="header-phone shrink-0 text-[11px] font-normal uppercase tracking-wide md:text-xs"
+            class="header-phone shrink-0 text-[13px] font-normal uppercase tracking-wide md:text-base"
             >1-403-762-2281</a
           >
-          <button
+          <!-- <button
             type="button"
             class="header-icon-btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors"
             aria-label="Search"
@@ -48,17 +48,17 @@
               <circle cx="11" cy="11" r="7" />
               <path d="M20 20l-3-3" stroke-linecap="round" />
             </svg>
-          </button>
+          </button> -->
           <div
             class="hidden items-center gap-4 uppercase tracking-wide md:flex lg:gap-6"
           >
-            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="room.html"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="room.html"
               >Stay</a
             >
-            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >Experiences</a
             >
-            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >Events</a
             >
           </div>
@@ -72,7 +72,7 @@
             src="images/JuniperLogoHeader.png"
             width="720"
             height="240"
-            class="h-[56px] w-auto md:h-[64px] lg:h-[68px]"
+            class="h-[56px] w-auto md:h-[64px] lg:h-[60px]"
             alt="Juniper Hotel"
           />
         </a>
@@ -83,18 +83,18 @@
           <div
             class="hidden items-center gap-4 uppercase tracking-wide md:flex lg:gap-6"
           >
-            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >About</a
             >
-            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >Stories</a
             >
-            <a class="header-nav-link text-[11px] font-bold md:text-xs" href="#bistro"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#bistro"
               >Bistro</a
             >
           </div>
           <a
-            class="header-book-btn inline-flex h-9 shrink-0 items-center justify-center rounded-full px-5 text-[11px] font-bold uppercase tracking-wide transition-colors md:text-xs"
+            class="header-book-btn inline-flex h-9 shrink-0 items-center justify-center rounded-full px-5 text-[13px] font-bold uppercase tracking-wide transition-colors md:text-sm"
             href="#"
             >Book</a
           >
@@ -105,10 +105,10 @@
             aria-expanded="false"
             aria-controls="mobile-menu"
           >
-            <span class="flex flex-col gap-[5px]" aria-hidden="true">
-              <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-              <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-              <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+            <span class="flex flex-col gap-[4px]" aria-hidden="true">
+              <span class="block h-0.5 w-4 rounded-full bg-current"></span>
+              <span class="block h-0.5 w-4 rounded-full bg-current"></span>
+              <span class="block h-0.5 w-4 rounded-full bg-current"></span>
             </span>
           </button>
         </div>
@@ -118,28 +118,29 @@
     <main id="main-content">
       <!-- Hero: modular section -->
       <section
-        class="hero relative flex min-h-screen flex-col justify-center overflow-hidden pb-24 pt-28 md:pb-28 md:pt-32"
+        class="hero hero-media-shell relative flex min-h-screen flex-col justify-center overflow-hidden pb-24 pt-28 md:pb-28 md:pt-32"
         aria-labelledby="hero-heading"
       >
-        <div
-          class="hero__bg-image"
-          role="img"
-          aria-label="Moraine Lake, Banff National Park"
-        ></div>
-        <div
-          class="pointer-events-none absolute inset-0 z-0 bg-black/50"
+        <video
+          class="hero-video absolute inset-0 h-full w-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="images/poster.webp"
+          preload="auto"
           aria-hidden="true"
-        ></div>
+        >
+          <source src="video/Juniper%20Hotel%20Experience.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-contour-overlay" aria-hidden="true"></div>
+
 
         <div class="relative z-[1] page-shell">
           <div
-            class="max-w-xl text-left sm:max-w-2xl md:max-w-2xl lg:max-w-3xl"
+            class="hero-text-shadow max-w-xl text-left sm:max-w-2xl md:max-w-2xl lg:max-w-3xl mt-16"
           >
-            <p
-              class="mb-4 text-[11px] font-normal uppercase tracking-[0.35em] text-white/85 md:mb-5 md:text-xs"
-            >
-              Juniper Hotel
-            </p>
+            
             <h1
               id="hero-heading"
               class="font-serif text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl sm:leading-[1.06] md:text-6xl md:leading-[1.05] lg:text-7xl lg:leading-[1.03]"
@@ -149,12 +150,12 @@
               the way.
             </h1>
             <p
-              class="mt-6 max-w-xl font-serif text-base italic leading-relaxed text-white/90 md:mt-7 md:text-lg"
+              class="mt-6 max-w-xl font-serif font-bold text-base italic leading-relaxed text-white/90 md:mt-7 md:text-lg"
             >
               Mountain hospitality and bistro dining at the edge of Banff — calm
               rooms, honest food, and views that stay with you.
             </p>
-            <div class="mt-8 inline-flex h-11 w-11 shrink-0 items-center justify-center md:mt-10 md:h-12 md:w-12">
+            <!-- <div class="mt-8 inline-flex h-11 w-11 shrink-0 items-center justify-center md:mt-10 md:h-12 md:w-12">
               <img
                 src="images/hotelAward.png"
                 width="1080"
@@ -162,10 +163,10 @@
                 class="max-h-full max-w-full object-contain opacity-95"
                 alt="Tripadvisor Travellers’ Choice Best of the Best 2025"
               />
-            </div>
+            </div> -->
             <div class="mt-8 md:mt-10">
               <a
-                class="inline-flex items-center justify-center bg-juniper-teal px-10 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-12 md:text-xs md:tracking-[0.2em]"
+                class="inline-flex items-center justify-center bg-juniper-teal px-10 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-12 md:text-base md:tracking-[0.2em]"
                 href="#rooms-booking"
                 >Book now</a
               >
@@ -181,35 +182,52 @@
         aria-labelledby="rooms-heading"
       >
         <div class="page-shell space-y-12 md:space-y-14">
-          <div class="text-center">
-            <p
-              class="mb-4 text-[11px] font-normal uppercase tracking-[0.35em] text-slate-600 md:text-xs"
-            >
-              Juniper Hotel
-            </p>
-            <h2
-              id="rooms-heading"
-              class="font-serif text-4xl font-normal tracking-tight md:text-5xl"
-            >
-              <a
-                class="text-slate-900 transition-colors hover:text-juniper-indigo"
-                href="room.html"
-                >Rooms &amp; suites</a
+          <div
+            class="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-center lg:gap-14"
+          >
+            <div class="text-left">
+              <p
+                class="mb-4 text-[13px] font-normal uppercase tracking-[0.35em] text-slate-600 md:text-sm"
               >
-            </h2>
-            <p
-              class="mx-auto mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-700 md:text-lg"
-            >
-              Designed to be a silent witness to the majesty of the Rockies. Each
-              space is a study in texture, warmth, and deliberate simplicity —
-              serene rooms with panoramic views over Banff.
-            </p>
+                STAY
+              </p>
+              <h2
+                id="rooms-heading"
+                class="font-serif text-4xl font-medium tracking-tight md:text-5xl"
+              >
+                <a
+                  class="text-slate-900 transition-colors hover:text-juniper-indigo"
+                  href="room.html"
+                  >Rooms &amp; suites</a
+                >
+              </h2>
+              <p
+                class="mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-700 md:text-lg"
+              >
+                Designed to be a silent witness to the majesty of the Rockies. Each
+                space is a study in texture, warmth, and deliberate simplicity —
+                serene rooms with panoramic views over Banff.
+              </p>
+            </div>
+
+            <div class="relative overflow-hidden rounded-sm shadow-[0_16px_48px_-12px_rgba(0,0,0,0.12)]">
+              <img
+                class="block aspect-[4/3] h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/stayheader2-scaled.webp"
+                width="1600"
+                height="1200"
+                alt="Deluxe room with panoramic mountain views"
+                loading="lazy"
+                decoding="async"
+              />
+              <img class="absolute inset-0 w-full h-full object-cover z-10 opacity-70 animated-image" src="http://127.0.0.1:5500/images/ImageOverlayLeft.svg" alt="Brand Pattern Footer" />
+            </div>
           </div>
 
           <div
             class="border-t-[3px] border-juniper-teal bg-white px-6 py-8 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] md:px-10 md:py-10 lg:px-12"
           >
-            <h3 class="font-serif text-2xl font-normal text-slate-900 md:text-[1.65rem]">
+            <h3 class="font-serif text-2xl font-medium text-slate-900 md:text-[1.65rem]">
               Plan your stay
             </h3>
             <div class="mt-6 border-t border-stone-200"></div>
@@ -220,7 +238,7 @@
               >
                 <div class="text-left">
                   <label
-                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
                     for="check-in"
                     >Check in</label
                   >
@@ -247,7 +265,7 @@
 
                 <div class="text-left">
                   <label
-                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
                     for="check-out"
                     >Check out</label
                   >
@@ -274,7 +292,7 @@
 
                 <div class="text-left">
                   <label
-                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
                     for="guests"
                     >Guests</label
                   >
@@ -299,7 +317,7 @@
 
                 <div class="text-left">
                   <label
-                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[11px]"
+                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
                     for="special-code"
                     >Special code</label
                   >
@@ -319,12 +337,12 @@
               >
                 <button
                   type="submit"
-                  class="inline-flex w-full items-center justify-center bg-juniper-teal px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 sm:w-auto md:px-10 md:text-xs md:tracking-[0.2em]"
+                  class="inline-flex w-full items-center justify-center bg-juniper-teal px-8 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 sm:w-auto md:px-10 md:text-sm md:tracking-[0.2em]"
                 >
                   Check availability
                 </button>
                 <p
-                  class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 sm:text-right md:text-[11px]"
+                  class="text-center text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 sm:text-right md:text-[13px]"
                 >
                   Prefer to call?
                   <a class="text-slate-800 underline-offset-2 hover:underline" href="tel:14037622281"
@@ -402,19 +420,19 @@
       <!-- Bistro -->
       <section
         id="bistro"
-        class="bg-juniper-cream py-16 md:py-20 lg:py-24"
+        class="bg-juniper-light-purple py-16 md:py-20 lg:py-24"
         aria-labelledby="bistro-heading"
       >
         <div class="page-shell">
           <div class="mx-auto max-w-3xl text-center">
             <p
-              class="mb-4 text-[11px] font-normal uppercase tracking-[0.32em] text-slate-600 md:text-xs"
+              class="mb-4 text-[13px] font-normal uppercase tracking-[0.32em] text-slate-600 md:text-sm"
             >
-              Juniper Hotel &amp; Bistro
+              DINE
             </p>
             <h2
               id="bistro-heading"
-              class="font-serif text-4xl font-normal tracking-tight text-slate-900 md:text-5xl"
+              class="font-serif text-4xl font-medium tracking-tight text-slate-900 md:text-5xl"
             >
               Juniper Bistro
             </h2>
@@ -431,22 +449,23 @@
             class="mt-12 grid gap-10 md:mt-14 lg:grid-cols-2 lg:items-center lg:gap-14 xl:gap-16"
           >
             <div
-              class="overflow-hidden rounded-sm shadow-[0_16px_48px_-12px_rgba(0,0,0,0.12)] lg:order-1"
+              class="overflow-hidden relative rounded-sm shadow-[0_16px_48px_-12px_rgba(0,0,0,0.12)] lg:order-1 animated-image scale-x-[-1]"
             >
               <img
                 class="block aspect-[4/3] h-full w-full object-cover lg:aspect-[5/4]"
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                src="images/bistro.jpg"
                 width="1600"
                 height="1200"
                 alt="Guests dining in a warmly lit bistro interior"
                 loading="lazy"
                 decoding="async"
               />
+              <img class="absolute inset-0 w-full h-full object-cover z-10 opacity-70" src="http://127.0.0.1:5500/images/ImageOverlayLeft.svg" alt="Brand Pattern Footer" />
             </div>
 
             <div class="lg:order-2">
               <p
-                class="text-base font-light leading-relaxed text-slate-600 md:text-[1.05rem]"
+                class="text-base font-normal leading-relaxed text-slate-800 md:text-[1.05rem]"
               >
                 Tucked into the hotel, Juniper Bistro is our answer to mountain
                 appetite: seasonal menus built from Alberta producers, classic
@@ -458,9 +477,15 @@
 
               <ul class="mt-8 space-y-4 text-sm text-slate-700 md:text-base">
                 <li class="flex gap-3">
-                  <span class="mt-0.5 shrink-0 text-slate-400" aria-hidden="true"
-                    >◇</span
+                  <span
+                    class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center text-slate-500"
+                    aria-hidden="true"
                   >
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <circle cx="12" cy="12" r="8" />
+                      <path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
                   <span
                     ><span class="font-bold uppercase tracking-wide text-slate-800"
                       >Hours</span
@@ -469,9 +494,19 @@
                   >
                 </li>
                 <li class="flex gap-3">
-                  <span class="mt-0.5 shrink-0 text-slate-400" aria-hidden="true"
-                    >◇</span
+                  <span
+                    class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center text-slate-500"
+                    aria-hidden="true"
                   >
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M7 3v8" stroke-linecap="round" />
+                      <path d="M5 3v4" stroke-linecap="round" />
+                      <path d="M9 3v4" stroke-linecap="round" />
+                      <path d="M7 11v10" stroke-linecap="round" />
+                      <path d="M15 3c1.7 1.8 2.6 4.1 2.6 6.6V21" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M15 3v18" stroke-linecap="round" />
+                    </svg>
+                  </span>
                   <span
                     ><span class="font-bold uppercase tracking-wide text-slate-800"
                       >Style</span
@@ -480,9 +515,15 @@
                   >
                 </li>
                 <li class="flex gap-3">
-                  <span class="mt-0.5 shrink-0 text-slate-400" aria-hidden="true"
-                    >◇</span
+                  <span
+                    class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center text-slate-500"
+                    aria-hidden="true"
                   >
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M7 13c0-3.6 2.7-6.4 7-7-0.7 4.5-3.4 7.2-7 7Z" stroke-linejoin="round" />
+                      <path d="M10 12c0 3.6 2.1 5.8 6 6 0-3.9-2.2-6-6-6Z" stroke-linejoin="round" />
+                    </svg>
+                  </span>
                   <span
                     ><span class="font-bold uppercase tracking-wide text-slate-800"
                       >Dietary</span
@@ -496,12 +537,12 @@
                 class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
               >
                 <a
-                  class="inline-flex items-center justify-center bg-juniper-teal px-8 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-10 md:text-xs md:tracking-[0.2em]"
+                  class="inline-flex items-center justify-center bg-juniper-purple px-8 py-3.5 text-center text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-10 md:text-sm md:tracking-[0.2em]"
                   href="tel:14037622281"
                   >Reserve a table</a
                 >
                 <a
-                  class="inline-flex items-center justify-center border border-juniper-indigo/45 px-8 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-juniper-indigo transition-colors hover:border-juniper-indigo hover:bg-juniper-indigo hover:text-white md:px-10 md:text-xs md:tracking-[0.2em]"
+                  class="inline-flex items-center justify-center border border-juniper-purple/45 px-8 py-3.5 text-center text-[13px] font-bold uppercase tracking-[0.18em] text-juniper-indigo transition-colors hover:border-juniper-purple hover:bg-juniper-purple hover:text-white md:px-10 md:text-sm md:tracking-[0.2em]"
                   href="#"
                   >View menu</a
                 >
@@ -1679,13 +1720,13 @@
         <div class="page-shell">
           <div class="mx-auto max-w-3xl text-center">
             <p
-              class="mb-4 text-[11px] font-normal uppercase tracking-[0.35em] text-slate-500 md:text-xs"
+              class="mb-4 text-[13px] font-normal uppercase tracking-[0.35em] text-slate-500 md:text-sm"
             >
               Social
             </p>
             <h2
               id="social-heading"
-              class="font-serif text-4xl font-normal tracking-tight text-slate-900 md:text-5xl"
+              class="font-serif text-4xl font-medium tracking-tight text-slate-900 md:text-5xl"
             >
               On Instagram
             </h2>
@@ -1698,49 +1739,80 @@
           </div>
 
           <div
-            class="mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-2 sm:gap-3 md:mt-14 md:gap-4 sm:max-w-3xl md:max-w-4xl lg:max-w-5xl"
+            class="instagram-grid mx-auto mt-12 grid max-w-5xl grid-cols-3 gap-2 sm:gap-3 md:mt-14 md:gap-4"
           >
-            <img
-              class="aspect-square w-full rounded-sm object-cover"
-              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
-              width="900"
-              height="900"
-              alt="Plated dish with greens on a wooden table"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              class="aspect-square w-full rounded-sm object-cover"
-              src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
-              width="900"
-              height="900"
-              alt="Outdoor swimming pool at dusk"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              class="aspect-square w-full rounded-sm object-cover"
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
-              width="900"
-              height="900"
-              alt="Mountain peaks above a sea of clouds"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              class="aspect-square w-full rounded-sm object-cover"
-              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=80"
-              width="900"
-              height="900"
-              alt="Hotel room with bed and fireplace"
-              loading="lazy"
-              decoding="async"
-            />
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Juniper-Website-HOME-images-copy-1024x683.jpg"
+                width="900"
+                height="900"
+                alt="Bright event spaces at Juniper"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Adventure1-scaled.jpg"
+                width="900"
+                height="900"
+                alt="Adventure scene near Banff"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/stayheader2-scaled.webp"
+                width="900"
+                height="900"
+                alt="Deluxe room view at Juniper"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/hottub2-scaled.webp"
+                width="900"
+                height="900"
+                alt="Mountain-view hot tub"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item">
+              <img
+                class="h-full w-full object-cover rounded-sm"
+                src="https://thejuniper.com/wp-content/uploads/2025/09/Juniper-final-9-of-12-scaled.jpg"
+                width="900"
+                height="900"
+                alt="Peaceful brunch overlooking Banff"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2023/10/Deluxe-Balcony-scaled.webp"
+                width="900"
+                height="900"
+                alt="Deluxe balcony with mountain view"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            
           </div>
 
           <p class="mt-10 text-center md:mt-12">
             <a
-              class="text-[11px] font-bold uppercase tracking-[0.28em] text-juniper-indigo underline decoration-juniper-lavender/80 underline-offset-[6px] transition-colors hover:text-juniper-purple md:text-xs md:tracking-[0.32em]"
+              class="text-[13px] font-bold uppercase tracking-[0.28em] text-juniper-indigo underline decoration-juniper-lavender/80 underline-offset-[6px] transition-colors hover:text-juniper-purple md:text-sm md:tracking-[0.32em]"
               href="https://www.instagram.com/juniperbanff/"
               rel="noopener noreferrer"
               target="_blank"
@@ -1750,25 +1822,61 @@
         </div>
       </section>
 
-      <!-- CTA: story + reserve -->
+      <!-- Bow Valley / location -->
       <section
-        class="relative isolate overflow-hidden bg-juniper-forest py-16 md:py-20 lg:py-24"
-        aria-labelledby="cta-story-heading"
+        class="bow-valley-section relative isolate overflow-hidden py-16 md:py-20 lg:py-24"
+        aria-labelledby="bow-valley-heading"
       >
-        <div class="juniper-cta-pattern" aria-hidden="true"></div>
-        <div class="page-shell relative z-10 text-center">
-          <h2
-            id="cta-story-heading"
-            class="mx-auto max-w-3xl font-serif text-3xl font-normal leading-[1.2] tracking-tight text-white md:text-4xl md:leading-[1.15] lg:max-w-4xl lg:text-[2.65rem]"
-          >
-            Begin your own story in the heart<br />
-            of the Rockies.
-          </h2>
-          <a
-            class="mt-8 inline-flex items-center justify-center bg-white px-9 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-juniper-teal transition-opacity hover:opacity-90 md:mt-10 md:px-12 md:text-xs md:tracking-[0.22em]"
-            href="#rooms-booking"
-            >Reserve your stay</a
-          >
+        <div class="bow-valley-section__bg" aria-hidden="true"></div>
+        <div class="bow-valley-section__veil" aria-hidden="true"></div>
+        <div class="bow-valley-section__contour" aria-hidden="true"></div>
+
+        <div class="page-shell relative z-10">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
+            <div class="park-outline-map park-outline-map--with-markers mx-auto w-full max-w-[30rem] lg:mx-0 lg:max-w-[33rem]">
+              <img
+                src="images/banff_national_park.svg"
+                alt="Map of Banff National Park"
+                class="park-outline-map__img"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="park-highlight park-highlight--lake-louise">
+                <span class="park-highlight__dot" aria-hidden="true"></span>
+                <span class="park-highlight__label">Lake Louise</span>
+              </div>
+              <div class="park-highlight park-highlight--banff">
+                <span class="park-highlight__dot" aria-hidden="true"></span>
+                <span class="park-highlight__label">Banff</span>
+              </div>
+              <div class="park-highlight park-highlight--canmore">
+                <span class="park-highlight__dot" aria-hidden="true"></span>
+                <span class="park-highlight__label">Canmore</span>
+              </div>
+            </div>
+
+            <div class="max-w-3xl text-white">
+              <p class="text-[13px] font-bold uppercase tracking-[0.28em] text-white/85 md:text-sm">
+                Banff National Park
+              </p>
+              <h2
+                id="bow-valley-heading"
+                class="mt-5 font-serif text-4xl font-medium leading-[1.14] tracking-tight md:text-5xl"
+              >
+                Stay close to what matters most in the Bow Valley.
+              </h2>
+              <p class="mt-6 max-w-2xl font-serif text-lg italic leading-relaxed text-white/90">
+                Anchored just above Banff, The Juniper offers quick access to both
+                town and trail: sunrise in Lake Louise, afternoons in Banff, and a
+                mountain-view return to the hotel by evening.
+              </p>
+              <p class="mt-5 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
+                The map highlights key points for first-time and returning guests
+                alike, so you can orient instantly and spend more time in the
+                places you came for.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1781,13 +1889,13 @@
         <div class="page-shell">
           <div class="mx-auto max-w-3xl text-center">
             <p
-              class="mb-4 text-[11px] font-normal uppercase tracking-[0.32em] text-slate-500 md:text-xs"
+              class="mb-4 text-[13px] font-normal uppercase tracking-[0.32em] text-slate-500 md:text-sm"
             >
               Guest reviews
             </p>
             <h2
               id="reviews-heading"
-              class="font-serif text-4xl font-normal tracking-tight text-slate-900 md:text-5xl"
+              class="font-serif text-4xl font-medium tracking-tight text-slate-900 md:text-5xl"
             >
               See what our past guests have to say
             </h2>
@@ -1839,7 +1947,7 @@
                     loading="lazy"
                     decoding="async"
                   />
-                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
                     Morgan K.
                     <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
                       >Google review</span
@@ -1866,7 +1974,7 @@
                     loading="lazy"
                     decoding="async"
                   />
-                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
                     Alex P.
                     <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
                       >Google review</span
@@ -1894,7 +2002,7 @@
                     loading="lazy"
                     decoding="async"
                   />
-                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
                     Samira L.
                     <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
                       >Google review</span
@@ -1921,7 +2029,7 @@
                     loading="lazy"
                     decoding="async"
                   />
-                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
                     Jordan T.
                     <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
                       >Google review</span
@@ -1948,7 +2056,7 @@
                     loading="lazy"
                     decoding="async"
                   />
-                  <p class="min-w-0 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[11px]">
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
                     Elena R.
                     <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
                       >Google review</span
@@ -1973,7 +2081,28 @@
         </div>
       </section>
 
-      
+      <!-- CTA: story + reserve -->
+      <section
+        class="relative isolate -mt-px overflow-hidden bg-juniper-forest py-16 md:py-20 lg:py-24"
+        aria-labelledby="cta-story-heading"
+      >
+        <div class="juniper-cta-pattern" aria-hidden="true"></div>
+        <div class="page-shell relative z-10 text-center">
+          <h2
+            id="cta-story-heading"
+            class="mx-auto max-w-3xl font-serif text-3xl font-medium leading-[1.2] tracking-tight text-white md:text-4xl md:leading-[1.15] lg:max-w-4xl lg:text-[2.65rem]"
+          >
+            Begin your own story in the heart<br />
+            of the Rockies.
+          </h2>
+          <a
+            class="mt-8 inline-flex items-center justify-center bg-white px-9 py-3.5 text-center text-[13px] font-bold uppercase tracking-[0.2em] text-juniper-teal transition-opacity hover:opacity-90 md:mt-10 md:px-12 md:text-sm md:tracking-[0.22em]"
+            href="#rooms-booking"
+            >Reserve your stay</a
+          >
+        </div>
+      </section>
+
     </main>
 
     <footer
@@ -1983,12 +2112,12 @@
     >
       <div class="page-shell py-14 md:py-16 lg:py-20">
         <div
-          class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:grid-cols-4 lg:gap-10"
+          class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:grid-cols-4 lg:gap-24"
         >
           <!-- Newsletter -->
           <div class="md:col-span-2 lg:col-span-1">
             <p
-              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+              class="text-[13px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-sm"
             >
               Newsletter
             </p>
@@ -2024,7 +2153,7 @@
                 aria-label="TripAdvisor"
               >
                 <img
-                  src="https://cdn.simpleicons.org/tripadvisor/00AF87"
+                  src="https://cdn.simpleicons.org/tripadvisor/45556c"
                   width="24"
                   height="24"
                   class="h-6 w-6"
@@ -2058,7 +2187,7 @@
             </div>
             <a
               href="#"
-              class="mt-6 inline-flex rounded-full border border-stone-400 bg-white px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-800 transition-colors hover:border-slate-600 hover:bg-juniper-cream/60 md:text-[11px]"
+              class="mt-6 inline-flex rounded-full border border-stone-400 bg-white px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.22em] text-slate-800 transition-colors hover:border-slate-600 hover:bg-juniper-cream/60 md:text-[13px]"
               >Accessibility</a
             >
           </div>
@@ -2066,7 +2195,7 @@
           <!-- Explore -->
           <div>
             <p
-              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+              class="text-[13px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-sm"
             >
               Explore
             </p>
@@ -2082,11 +2211,11 @@
           <!-- Learn -->
           <div>
             <p
-              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+              class="text-[13px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-sm"
             >
               Learn
             </p>
-            <ul class="mt-5 space-y-3 text-sm text-slate-800">
+            <ul class="mt-5 space-y-3 text-base text-slate-800">
               <li><a class="transition-colors hover:text-juniper-purple" href="#">About us</a></li>
               <li><a class="transition-colors hover:text-juniper-purple" href="#">Stories</a></li>
             </ul>
@@ -2095,21 +2224,21 @@
           <!-- Contact -->
           <div class="md:col-span-2 lg:col-span-1">
             <p
-              class="text-[11px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-xs"
+              class="text-[13px] font-normal uppercase tracking-[0.28em] text-slate-500 md:text-sm"
             >
               Contact
             </p>
             <address class="mt-5 not-italic">
-              <p class="text-sm leading-relaxed text-slate-800">
+              <p class="text-base leading-relaxed text-slate-800">
                 1 Juniper Way<br />
                 Banff, Alberta T1L 1E1
               </p>
-              <p class="mt-4 text-sm">
+              <p class="mt-4 text-base">
                 <a class="text-slate-800 transition-colors hover:text-juniper-purple" href="tel:18007622281"
                   >1-800-762-2281</a
                 >
               </p>
-              <p class="mt-2 text-sm">
+              <p class="mt-2 text-base">
                 <a
                   class="text-slate-800 underline-offset-2 transition-colors hover:text-juniper-purple hover:underline"
                   href="mailto:info@thejuniper.com"
@@ -2121,7 +2250,7 @@
         </div>
 
         <div
-          class="mt-14 flex flex-col gap-4 border-t border-stone-300 pt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 md:mt-16 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-6 md:text-[11px]"
+          class="mt-14 flex flex-col gap-4 border-t border-stone-300 pt-8 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:mt-16 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-6 md:text-[13px]"
         >
           <p class="text-slate-600">© 2026 The Juniper Hotel</p>
           <ul class="flex flex-wrap gap-x-6 gap-y-2 md:justify-end">
@@ -2142,6 +2271,9 @@
     <script src="js/header-scroll.js" defer></script>
     <script src="js/room-options.js" defer></script>
     <script src="js/reviews-carousel.js" defer></script>
+    <script src="js/animated-image.js" defer></script>
+    <script src="js/section-scroll-effects.js" defer></script>
+    <script src="js/hero-video.js" defer></script>
     <script src="js/story-gallery.js" defer></script>
     <script src="js/experience-showcase.js" defer></script>
   </body>
