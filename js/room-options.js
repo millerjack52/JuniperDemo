@@ -11,7 +11,7 @@
         "A generous retreat with stone hearth warmth, soft linens, and views toward the Bow Valley — the kind of room you sink into after a day on the trails.",
       specs: ["650 sq ft", "Gas fireplace"],
       image:
-        "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=80",
+        "images/deluxe4.jpg",
       imageLabel: "King suite with fireplace and layered bedding",
       detailHref: "room.html",
     },
@@ -23,7 +23,7 @@
         "Side-by-side comfort for families and friends: two private bedrooms, a shared living space, and quiet separation when you need to recharge before another Banff sunrise.",
       specs: ["900 sq ft", "Dual bathrooms"],
       image:
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
+        "images/deluxe4.jpg",
       imageLabel: "Hotel suite living area with soft lighting",
       detailHref: "room.html",
     },
@@ -35,7 +35,7 @@
         "Compact and calm, with a kitchenette and mountain light through generous windows — ideal for shorter stays or solo explorers who value simplicity.",
       specs: ["420 sq ft", "Kitchenette"],
       image:
-        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80",
+        "images/deluxe4.jpg",
       imageLabel: "Bright studio room with bed and window light",
       detailHref: "room.html",
     },
@@ -96,7 +96,7 @@
 
     var h3 = document.createElement("h3");
     h3.className =
-      "mt-3 font-serif text-3xl font-normal tracking-tight text-slate-900 md:mt-4 md:text-4xl lg:text-[2.65rem] lg:leading-tight";
+      "mt-3 font-serif text-3xl font-medium tracking-tight text-slate-900 md:mt-4 md:text-4xl lg:text-[2.65rem] lg:leading-tight";
     h3.textContent = r.title;
 
     var desc = document.createElement("p");
@@ -105,10 +105,9 @@
     desc.textContent = r.description;
 
     var link = document.createElement("a");
-    link.className =
-      "mt-10 inline-flex w-fit border-b border-juniper-indigo pb-1 text-[10px] font-bold uppercase tracking-[0.22em] text-juniper-indigo transition-colors hover:text-juniper-purple md:mt-12 md:text-[11px] md:tracking-[0.24em]";
+    link.className = "";
     link.href = r.detailHref || "room.html";
-    link.textContent = "View details";
+    link.innerHTML = '<button type="submit" class="mt-10 inline-flex w-full items-center justify-center bg-juniper-teal px-8 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 sm:w-auto md:px-10 md:text-sm md:tracking-[0.2em]">View details</button>';
 
     body.appendChild(cat);
     body.appendChild(h3);
