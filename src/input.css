@@ -139,6 +139,32 @@
     @apply pointer-events-none absolute inset-0 bg-cover bg-center;
   }
 
+  /**
+   * Experience showcase — full “stage” height + absolutely positioned photo stack
+   * (card floats above via HTML overlay; media fills the stage).
+   */
+  .experience-showcase__stage {
+    position: relative;
+    width: 100%;
+    min-height: min(58vh, 520px);
+    overflow: hidden;
+    border-radius: 0.125rem;
+    background-color: rgb(38 38 38);
+  }
+
+  @media (min-width: 768px) {
+    .experience-showcase__stage {
+      min-height: min(62vh, 580px);
+    }
+  }
+
+  .experience-showcase__media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background-color: rgb(38 38 38);
+  }
+
   /** Room detail hero — king suite interior */
   .room-detail__hero-bg {
     background-image: url("https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=2400&q=80");
@@ -282,6 +308,327 @@
   @media (min-width: 1024px) {
     .review-card {
       flex: 0 0 calc((100% - 3rem) / 3);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .story-tile__overlay {
+      transition: none;
+    }
+  }
+
+  /**
+   * Story gallery — two tiles per row; open tile expands across the row and covers sibling.
+   */
+  .story-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 0.75rem;
+    grid-auto-rows: minmax(0, auto);
+    align-items: start;
+  }
+
+  .story-gallery__row {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 0.75rem;
+    position: relative;
+    align-items: start;
+    align-content: start;
+    min-width: 0;
+    isolation: isolate;
+  }
+
+  @media (max-width: 1023px) {
+    .story-gallery__row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .story-gallery__row--has-open > .story-tile--row-sibling-hidden {
+      display: none;
+    }
+
+    .story-gallery__row--has-open > .story-tile--open {
+      z-index: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .story-gallery__row--8-4 {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .story-gallery__row--8-4 > .story-tile:nth-child(1) {
+      grid-column: span 8;
+    }
+
+    .story-gallery__row--8-4 > .story-tile:nth-child(2) {
+      grid-column: span 4;
+    }
+
+    .story-gallery__row--5-7 {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .story-gallery__row--5-7 > .story-tile:nth-child(1) {
+      grid-column: span 5;
+    }
+
+    .story-gallery__row--5-7 > .story-tile:nth-child(2) {
+      grid-column: span 7;
+    }
+
+    .story-gallery__row--7-5 {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .story-gallery__row--7-5 > .story-tile:nth-child(1) {
+      grid-column: span 7;
+    }
+
+    .story-gallery__row--7-5 > .story-tile:nth-child(2) {
+      grid-column: span 5;
+    }
+
+    .story-gallery__row--has-open > .story-tile--open {
+      grid-column: 1 / -1 !important;
+      z-index: 2;
+      position: relative;
+    }
+
+    .story-gallery__row--has-open > .story-tile--row-sibling-hidden {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 0 !important;
+      max-width: 0 !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      border: none !important;
+      clip-path: inset(50%);
+    }
+  }
+
+  /**
+   * Optional hero brand pattern — full-bleed in the card; must sit ABOVE .story-tile__overlay (z-index).
+   * Use absolute inset-0 on the <img>. Optional: style="--story-pattern-opacity: 0.5"
+   */
+  img.story-tile__brand-pattern {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: top center;
+    opacity: var(--story-pattern-opacity, 0.72);
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.2));
+    transition: filter 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  /** Stretch pattern to exact tile bounds (no letterboxing); use when cover leaves edges empty */
+  img.story-tile__brand-pattern.story-tile__brand-pattern--stretch-tile {
+    object-fit: fill;
+    object-position: center center;
+  }
+
+  /**
+   * Juniper Bistro mosaic tile — enlarge pattern without `scale()` (can hide the layer or
+   * zoom into empty SVG padding). Oversized box + translate centers; `fill` stretches art.
+   */
+  img.story-tile__brand-pattern.story-tile__brand-pattern--bistro-fill {
+    inset: auto;
+    left: 50%;
+    top: 50%;
+    width: 230%;
+    height: 230%;
+    max-width: none;
+    max-height: none;
+    transform: translate(-50%, -50%);
+    object-fit: fill;
+    object-position: center center;
+  }
+
+  /** Contour strokes → pure white (brightness 0 → black, invert → #fff); transparency unchanged */
+  button[class*="group/story"]:hover img.story-tile__brand-pattern--line-hover,
+  button[class*="group/story"]:focus-visible img.story-tile__brand-pattern--line-hover {
+    filter: brightness(0) invert(1) drop-shadow(0 0 10px rgb(255 255 255 / 0.55));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    img.story-tile__brand-pattern {
+      transition: none;
+    }
+  }
+
+  /* Collapsed hero: fixed visual height so cards stay balanced */
+  .story-tile:not(.story-tile--open) .story-tile__hero {
+    height: 200px;
+    min-height: 0;
+  }
+
+  @media (min-width: 768px) {
+    .story-tile:not(.story-tile--open) .story-tile__hero {
+      height: 220px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .story-tile:not(.story-tile--open) .story-tile__hero {
+      height: 240px;
+    }
+  }
+
+  /* Open: hide image card — only the info panel shows and fills the row */
+  .story-tile--open .story-tile__hero {
+    display: none;
+  }
+
+  .story-tile__split {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 0fr;
+    align-items: start;
+    transition: grid-template-rows 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  .story-tile--open .story-tile__split {
+    grid-template-rows: 1fr;
+  }
+
+  @media (min-width: 1024px) {
+    .story-tile__split {
+      grid-template-columns: 1fr 0fr;
+      grid-template-rows: none;
+      transition: grid-template-columns 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+
+    /* Open: single column — info only (both row cards visually replaced) */
+    .story-tile--open .story-tile__split {
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+    }
+  }
+
+  .story-tile__detail {
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.45s ease,
+      transform 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+    transform: translateY(0.5rem);
+  }
+
+  /* Closed: hidden panel must not inflate grid row height (esp. desktop 0fr column) */
+  .story-tile:not(.story-tile--open) .story-tile__detail {
+    max-height: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .story-tile__detail {
+      transform: translateX(1rem);
+    }
+  }
+
+  .story-tile--open .story-tile__detail {
+    max-height: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) translateX(0);
+    border-radius: 0.125rem;
+    z-index: 1;
+  }
+
+  .story-tile--open .story-tile__overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .story-tile__split,
+    .story-tile__detail {
+      transition: none !important;
+    }
+
+    .story-gallery__grid .story-tile,
+    .story-tile__card {
+      transition: none !important;
+    }
+  }
+
+  /* Brand pattern motion lab (#pattern-motion-lab) */
+  @keyframes pattern-demo-ambient {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.04);
+      opacity: 0.88;
+    }
+  }
+
+  @keyframes pattern-demo-wipe {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .pattern-demo-img--ambient {
+    transform-origin: center center;
+    animation: pattern-demo-ambient 7s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .pattern-demo-wipe__clip {
+    width: 100%;
+    clip-path: inset(0 100% 0 0);
+  }
+
+  .pattern-demo-wipe--triggered .pattern-demo-wipe__clip {
+    animation: pattern-demo-wipe 2.4s cubic-bezier(0.33, 1, 0.68, 1) 0.15s forwards;
+  }
+
+  .pattern-demo-wipe--static .pattern-demo-wipe__clip {
+    clip-path: inset(0 0 0 0);
+    animation: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pattern-demo-img--ambient {
+      animation: none;
+    }
+
+    .pattern-demo-wipe__clip {
+      clip-path: inset(0 0 0 0);
+    }
+
+    .pattern-demo-wipe--triggered .pattern-demo-wipe__clip {
+      animation: none;
+    }
+  }
+
+  /* Full-bleed experience showcase (#experience-showcase) */
+  #experience-showcase .experience-showcase__tab--active {
+    @apply bg-juniper-cream text-juniper-charcoal;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #experience-showcase .experience-showcase__track {
+      transition: none !important;
+    }
+
+    #experience-showcase [data-experience-bg] {
+      transition: none !important;
     }
   }
 }
