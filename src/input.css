@@ -910,6 +910,11 @@
   }
 
   /* Full-bleed experience showcase (#experience-showcase) */
+  #experience-showcase .experience-showcase__tablist .experience-showcase__tab {
+    text-align: center;
+    line-height: 1.25;
+  }
+
   #experience-showcase .experience-showcase__tab--active {
     @apply bg-juniper-cream text-juniper-charcoal;
   }
