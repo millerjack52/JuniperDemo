@@ -452,26 +452,6 @@
     @apply opacity-40;
   }
 
-  .bistro-intro-contour {
-    position: absolute;
-    left: -18%;
-    bottom: -32%;
-    width: clamp(14rem, 36vw, 24rem);
-    height: clamp(14rem, 36vw, 24rem);
-    background-color: var(--color-juniper-teal);
-    -webkit-mask-image: url("../images/BrandPatternFooterWhite.svg");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    -webkit-mask-position: left bottom;
-    mask-image: url("../images/BrandPatternFooterWhite.svg");
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    mask-position: left bottom;
-    opacity: 0.42;
-    pointer-events: none;
-    z-index: 0;
-  }
-
   .bistro-menu-modal-filter {
     @apply border-b-0 bg-transparent pb-1 text-[11px] font-normal uppercase tracking-[0.2em] text-slate-500 transition-colors hover:text-slate-800 md:text-xs;
   }
