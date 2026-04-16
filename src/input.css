@@ -2,6 +2,9 @@
 
 @source "../index.html";
 @source "../room.html";
+@source "../bistro.html";
+@source "../bistro-events.html";
+@source "../bistro-event-autumn-harvest.html";
 @source "../js/**/*.js";
 
 @layer utilities {
@@ -427,6 +430,272 @@
 
   .booking-field-select {
     @apply w-full cursor-pointer appearance-none border-0 border-b border-stone-300 bg-transparent py-2 pr-8 text-sm text-slate-800 outline-none transition-colors focus:border-juniper-teal;
+  }
+
+  .filter-chip {
+    @apply inline-flex items-center justify-center border border-juniper-purple/35 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-juniper-indigo transition-colors hover:border-juniper-purple hover:bg-juniper-purple hover:text-white md:text-[12px];
+  }
+
+  .filter-chip.is-active {
+    @apply border-juniper-purple bg-juniper-purple text-white;
+  }
+
+  .menu-item-card {
+    @apply border border-stone-200 bg-white p-6 shadow-[0_14px_36px_-18px_rgba(0,0,0,0.2)] transition-[opacity,background-color,border-color,box-shadow] duration-300;
+  }
+
+  .menu-item-card.is-match {
+    @apply border-juniper-teal/45 bg-juniper-light-purple shadow-[0_16px_40px_-20px_rgba(0,90,74,0.35)];
+  }
+
+  .menu-item-card.is-muted {
+    @apply opacity-40;
+  }
+
+  .bistro-intro-contour {
+    position: absolute;
+    left: -18%;
+    bottom: -32%;
+    width: clamp(14rem, 36vw, 24rem);
+    height: clamp(14rem, 36vw, 24rem);
+    background-color: var(--color-juniper-teal);
+    -webkit-mask-image: url("../images/BrandPatternFooterWhite.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: left bottom;
+    mask-image: url("../images/BrandPatternFooterWhite.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: left bottom;
+    opacity: 0.42;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bistro-menu-modal-filter {
+    @apply border-b-0 bg-transparent pb-1 text-[11px] font-normal uppercase tracking-[0.2em] text-slate-500 transition-colors hover:text-slate-800 md:text-xs;
+  }
+
+  .bistro-menu-modal-filter-nav {
+    position: relative;
+    padding-bottom: 0.25rem;
+  }
+
+  .bistro-menu-modal-filter-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--color-juniper-teal);
+    transform: translateX(0);
+    transition: width 320ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .bistro-menu-modal-filter.is-active {
+    @apply text-slate-800;
+  }
+
+  .bistro-menu-modal-tier {
+    @apply -mb-px border-b-2 border-transparent px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500 transition-colors hover:text-slate-800 md:px-8 md:text-xs md:tracking-[0.24em];
+  }
+
+  .bistro-menu-modal-tier.is-active {
+    @apply border-juniper-teal text-slate-800;
+  }
+
+  .bistro-menu-modal-item {
+    @apply transition-opacity duration-300;
+  }
+
+  .bistro-menu-modal-section {
+    max-height: 2000px;
+    opacity: 1;
+    transform: translateY(0);
+    overflow: hidden;
+    transition:
+      max-height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 260ms ease,
+      transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      margin 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .bistro-menu-modal-section.is-filter-hidden {
+    max-height: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+  }
+
+  .bistro-menu-modal-item {
+    max-height: 700px;
+    opacity: 1;
+    transform: translateY(0);
+    overflow: hidden;
+    transition:
+      max-height 360ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 220ms ease,
+      transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+      margin 360ms cubic-bezier(0.22, 1, 0.36, 1),
+      padding 360ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 220ms ease;
+  }
+
+  .bistro-menu-modal-item.is-filter-hidden {
+    max-height: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-color: transparent !important;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+  }
+
+  .bistro-menu-modal-item.is-muted {
+    @apply opacity-[0.35];
+  }
+
+  /**
+   * Bistro page typography normalization:
+   * keep bistro content on the same text tokens as the home page.
+   */
+  .bistro-page .text-slate-500 {
+    color: var(--color-slate-600);
+  }
+
+  .bistro-page .text-slate-400 {
+    color: var(--color-slate-500);
+  }
+
+  .bistro-page .bistro-menu-modal-item h4 {
+    color: var(--color-slate-900);
+  }
+
+  .bistro-page .bistro-menu-modal-item .tabular-nums {
+    color: var(--color-slate-800);
+  }
+
+  .bistro-page .bistro-menu-modal-item p {
+    font-size: 1rem;
+    line-height: var(--leading-relaxed);
+    color: var(--color-slate-600);
+  }
+
+  .bistro-page .bistro-menu-modal-item p.text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    color: var(--color-slate-500);
+  }
+
+  /* Global Bistro size bump: increase readable copy scale in page content. */
+  .bistro-page main .text-sm {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  .bistro-page main .text-base {
+    font-size: 1.25rem;
+    line-height: 1.85rem;
+  }
+
+  .bistro-page main .text-lg {
+    font-size: 1.375rem;
+    line-height: 1.95rem;
+  }
+
+  .bistro-page main .text-xs {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+
+  .bistro-page main .text-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .bistro-page main .text-2xl {
+    font-size: 1.75rem;
+    line-height: 2.2rem;
+  }
+
+  .bistro-page main .text-3xl {
+    font-size: 2.1rem;
+    line-height: 2.45rem;
+  }
+
+  .bistro-page main .text-4xl {
+    font-size: 2.6rem;
+    line-height: 2.85rem;
+  }
+
+  .bistro-page main .text-5xl {
+    font-size: 3.2rem;
+    line-height: 3.35rem;
+  }
+
+  .bistro-page main .text-6xl {
+    font-size: 3.9rem;
+    line-height: 4.05rem;
+  }
+
+  .bistro-page main .text-7xl {
+    font-size: 4.7rem;
+    line-height: 4.85rem;
+  }
+
+  .bistro-page main .text-\[11px\] {
+    font-size: 0.95rem;
+  }
+
+  .bistro-page main .text-\[12px\] {
+    font-size: 1rem;
+  }
+
+  .bistro-page main .text-\[13px\] {
+    font-size: 1.05rem;
+  }
+
+  .bistro-page main .text-\[15px\] {
+    font-size: 1.125rem;
+  }
+
+  .bistro-page main .md\:text-\[1\.05rem\] {
+    font-size: 1.2rem;
+  }
+
+  .bistro-page main .md\:text-\[1\.0625rem\] {
+    font-size: 1.22rem;
+  }
+
+  .bistro-page main .md\:text-\[1\.65rem\] {
+    font-size: 1.9rem;
+  }
+
+  .bistro-page main .lg\:text-\[2\.35rem\] {
+    font-size: 2.7rem;
+  }
+
+  .bistro-page main .lg\:text-\[2\.65rem\] {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 48rem) {
+    .bistro-page .bistro-menu-modal-item p {
+      font-size: 1.05rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bistro-menu-modal-filter-indicator,
+    .bistro-menu-modal-section,
+    .bistro-menu-modal-item {
+      transition: none !important;
+    }
   }
 
   .room-options__tab-strip {
