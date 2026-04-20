@@ -2,7 +2,7 @@
  * Assembles ./public for Vercel (Output Directory: public).
  * Keeps repo root HTML/assets for local dev; production build copies them in.
  */
-const { cpSync, mkdirSync, rmSync, existsSync } = require("fs");
+const { cpSync, mkdirSync, rmSync, existsSync, readdirSync } = require("fs");
 const { execSync } = require("child_process");
 const path = require("path");
 
@@ -19,7 +19,8 @@ execSync(
   { stdio: "inherit", cwd: root, env: process.env }
 );
 
-for (const file of ["index.html", "room.html"]) {
+const htmlFiles = readdirSync(root).filter((entry) => entry.toLowerCase().endsWith(".html"));
+for (const file of htmlFiles) {
   cpSync(path.join(root, file), path.join(pub, file));
 }
 for (const dir of ["images", "fonts", "js"]) {
