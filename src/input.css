@@ -231,6 +231,120 @@
     animation: hero-text-fade-slide-up 900ms ease-out 120ms forwards;
   }
 
+  .reservations-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 240ms ease;
+  }
+
+  .reservations-popup.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .reservations-popup__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+  }
+
+  .reservations-popup__panel {
+    position: relative;
+    width: 100%;
+    max-width: 80rem;
+    max-height: 100dvh;
+    transform: translateY(100%);
+    transition: transform 280ms ease;
+  }
+
+  .reservations-popup.is-open .reservations-popup__panel {
+    transform: translateY(0);
+  }
+
+  .reservations-popup__inner {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .reservations-popup__card {
+    max-height: calc(100dvh - 1rem);
+    overflow-y: auto;
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+
+  .reservations-popup__close {
+    display: inline-flex;
+    height: 2.75rem;
+    width: 2.75rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid rgb(214 211 209);
+    color: rgb(87 83 78);
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .reservations-popup__close:hover {
+    border-color: rgb(168 162 158);
+    background-color: rgb(250 250 249);
+    color: rgb(41 37 36);
+  }
+
+  /* ─── FAQ accordion ─────────────────────────────────────────────────── */
+
+  .faq-item summary {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.375rem 0;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__icon {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    transition: transform 300ms ease;
+  }
+
+  .faq-item[open] .faq-item__icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-item__body {
+    overflow: hidden;
+  }
+
+  .faq-item__body-inner {
+    padding-bottom: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .reservations-popup__inner {
+      padding-bottom: max(0, env(safe-area-inset-bottom));
+    }
+
+    .reservations-popup__card {
+      max-height: min(42rem, calc(100dvh - 2rem));
+    }
+  }
+
   @keyframes hero-text-fade-slide-up {
     to {
       opacity: 1;
@@ -375,24 +489,34 @@
     @apply fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,color] duration-300 ease-out;
   }
 
+  .site-header__bar {
+    @apply mx-auto w-full max-w-7xl px-5 py-5 md:px-8 lg:px-10;
+  }
+
   .site-header[data-scrolled="false"] {
     @apply bg-transparent text-white shadow-none;
   }
 
+  .site-header[data-scrolled="false"] .site-header__bar {
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
   .site-header[data-scrolled="true"] {
-    @apply bg-white/95 text-juniper-charcoal shadow-[0_1px_0_rgba(0,0,0,0.06)] backdrop-blur-sm;
+    @apply bg-white text-juniper-charcoal shadow-[0_1px_0_rgba(0,0,0,0.07)];
   }
 
   .site-header[data-scrolled="false"] .header-nav-link {
-    @apply text-white/95 hover:text-white;
+    @apply text-white/90 hover:text-white;
   }
 
   .site-header[data-scrolled="true"] .header-nav-link {
-    @apply text-juniper-charcoal hover:text-juniper-indigo;
+    @apply text-juniper-charcoal/90 hover:text-juniper-indigo;
   }
 
   .site-header[data-scrolled="false"] .header-phone {
-    @apply text-white/90;
+    @apply text-white/80;
   }
 
   .site-header[data-scrolled="true"] .header-phone {
@@ -404,21 +528,24 @@
   }
 
   .site-header[data-scrolled="true"] .header-icon-btn {
-    @apply border-transparent bg-[var(--color-juniper-purple)] text-white hover:opacity-90;
+    @apply border-stone-300 text-juniper-charcoal hover:bg-stone-100;
   }
 
   .site-header[data-scrolled="false"] .header-book-btn {
-    @apply border border-white/30 bg-white/20 text-white backdrop-blur-sm hover:bg-white/30;
+    @apply border border-white/40 bg-white/15 text-white hover:bg-white/25;
   }
 
   .site-header[data-scrolled="false"] .header-nav-link,
-  .site-header[data-scrolled="false"] .header-phone,
-  .site-header[data-scrolled="false"] .header-book-btn {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45), 0 12px 28px rgba(0, 0, 0, 0.35);
+  .site-header[data-scrolled="false"] .header-phone {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .site-header[data-scrolled="false"] .site-header__logo {
+    filter: brightness(0) invert(1);
   }
 
   .site-header[data-scrolled="true"] .header-book-btn {
-    @apply border-transparent bg-[var(--color-juniper-purple)] text-white hover:opacity-90;
+    @apply border-transparent bg-juniper-teal text-white hover:opacity-90;
   }
 
   .booking-field-input {

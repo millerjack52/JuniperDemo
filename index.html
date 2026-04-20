@@ -16,12 +16,13 @@
     <!-- Header: modular partial — swap `data-scrolled` via JS -->
     <header
       id="site-header"
-      class="site-header py-6"
+      class="site-header"
       data-scrolled="true"
       role="banner"
     >
+      <div class="site-header__bar">
       <nav
-        class="page-shell grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-1 md:gap-6"
+        class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-1 md:gap-6"
         aria-label="Primary"
       >
         <div
@@ -72,7 +73,7 @@
             src="images/JuniperLogoHeader.png"
             width="720"
             height="240"
-            class="h-[56px] w-auto md:h-[64px] lg:h-[60px]"
+            class="site-header__logo h-[56px] w-auto transition-[filter] duration-300 md:h-[64px] lg:h-[60px]"
             alt="Juniper Hotel"
           />
         </a>
@@ -96,6 +97,7 @@
           <a
             class="header-book-btn inline-flex h-9 shrink-0 items-center justify-center rounded-full px-5 text-[13px] font-bold uppercase tracking-wide transition-colors md:text-sm"
             href="#"
+            data-trigger-reservation-widget
             >Book</a
           >
           <button
@@ -113,6 +115,7 @@
           </button>
         </div>
       </nav>
+      </div>
     </header>
 
     <main id="main-content">
@@ -134,6 +137,7 @@
           <source src="video/Juniper%20Hotel%20Experience.mp4" type="video/mp4" />
         </video>
         <div class="hero-contour-overlay" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/45 to-transparent z-[1]" aria-hidden="true"></div>
 
 
         <div class="relative z-[1] page-shell">
@@ -167,7 +171,8 @@
             <div class="mt-8 md:mt-10">
               <a
                 class="inline-flex items-center justify-center bg-juniper-teal px-10 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-12 md:text-base md:tracking-[0.2em]"
-                href="#rooms-booking"
+                href="#"
+                data-trigger-reservation-widget
                 >Book now</a
               >
             </div>
@@ -181,7 +186,7 @@
         class="bg-juniper-cream py-16 md:py-20 lg:py-24"
         aria-labelledby="rooms-heading"
       >
-        <div class="page-shell space-y-12 md:space-y-14">
+        <div class="page-shell">
           <div
             class="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2 lg:items-center lg:gap-14"
           >
@@ -198,7 +203,7 @@
                 <a
                   class="text-slate-900 transition-colors hover:text-juniper-indigo"
                   href="room.html"
-                  >Rooms &amp; suites</a
+                  >Rooms &amp; Suites</a
                 >
               </h2>
               <p
@@ -208,6 +213,12 @@
                 space is a study in texture, warmth, and deliberate simplicity —
                 serene rooms with panoramic views over Banff.
               </p>
+              <a
+                  class="mt-8 inline-flex items-center justify-center bg-juniper-teal px-8 py-3.5 text-center text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-10 md:text-sm md:tracking-[0.2em]"
+                  href="tel:14037622281"
+                  data-trigger-reservation-widget
+                  >Check availability</a
+                >
             </div>
 
             <div class="relative overflow-hidden rounded-sm shadow-[0_16px_48px_-12px_rgba(0,0,0,0.12)]">
@@ -224,134 +235,6 @@
             </div>
           </div>
 
-          <div
-            class="border-t-[3px] border-juniper-teal bg-white px-6 py-8 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] md:px-10 md:py-10 lg:px-12"
-          >
-            <h3 class="font-serif text-2xl font-medium text-slate-900 md:text-[1.65rem]">
-              Plan your stay
-            </h3>
-            <div class="mt-6 border-t border-stone-200"></div>
-
-            <form class="mt-8" action="#" method="get">
-              <div
-                class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10"
-              >
-                <div class="text-left">
-                  <label
-                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
-                    for="check-in"
-                    >Check in</label
-                  >
-                  <div class="relative">
-                    <input
-                      id="check-in"
-                      name="check-in"
-                      type="text"
-                      class="booking-field-input"
-                      placeholder="dd / mm / yyyy"
-                      autocomplete="off"
-                    />
-                    <span
-                      class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
-                      aria-hidden="true"
-                    >
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="3" y="4" width="18" height="18" rx="2" />
-                        <path d="M3 10h18M8 2v4M16 2v4" stroke-linecap="round" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="text-left">
-                  <label
-                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
-                    for="check-out"
-                    >Check out</label
-                  >
-                  <div class="relative">
-                    <input
-                      id="check-out"
-                      name="check-out"
-                      type="text"
-                      class="booking-field-input"
-                      placeholder="dd / mm / yyyy"
-                      autocomplete="off"
-                    />
-                    <span
-                      class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
-                      aria-hidden="true"
-                    >
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="3" y="4" width="18" height="18" rx="2" />
-                        <path d="M3 10h18M8 2v4M16 2v4" stroke-linecap="round" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="text-left">
-                  <label
-                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
-                    for="guests"
-                    >Guests</label
-                  >
-                  <div class="relative">
-                    <select id="guests" name="guests" class="booking-field-select">
-                      <option value="1">1 guest</option>
-                      <option value="2" selected>2 guests</option>
-                      <option value="3">3 guests</option>
-                      <option value="4">4 guests</option>
-                      <option value="5">5+ guests</option>
-                    </select>
-                    <span
-                      class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
-                      aria-hidden="true"
-                    >
-                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="text-left">
-                  <label
-                    class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
-                    for="special-code"
-                    >Special code</label
-                  >
-                  <input
-                    id="special-code"
-                    name="special-code"
-                    type="text"
-                    class="booking-field-input pr-0"
-                    placeholder="Optional"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-
-              <div
-                class="mt-10 flex flex-col items-stretch gap-6 border-t border-stone-100 pt-8 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <button
-                  type="submit"
-                  class="inline-flex w-full items-center justify-center bg-juniper-teal px-8 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 sm:w-auto md:px-10 md:text-sm md:tracking-[0.2em]"
-                >
-                  Check availability
-                </button>
-                <p
-                  class="text-center text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 sm:text-right md:text-[13px]"
-                >
-                  Prefer to call?
-                  <a class="text-slate-800 underline-offset-2 hover:underline" href="tel:14037622281"
-                    >1-403-762-2281</a
-                  >
-                </p>
-              </div>
-            </form>
-          </div>
         </div>
       </section>
 
@@ -567,7 +450,7 @@
             </p>
             <h2
               id="our-story-heading"
-              class="font-serif text-4xl font-normal leading-tight tracking-tight text-[#2D4739] md:text-5xl"
+              class="font-serif text-4xl font-medium leading-tight tracking-tight text-[#2D4739] md:text-5xl"
             >
               A place to pause
             </h2>
@@ -2081,6 +1964,168 @@
         </div>
       </section>
 
+      <!-- FAQ -->
+      <section
+        id="faq"
+        class="bgjwhite py-16 md:py-20 lg:py-24"
+        aria-labelledby="faq-heading"
+      >
+        <div class="page-shell">
+          <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-16 xl:gap-24">
+
+            <!-- Left: intro -->
+            <div class="lg:pt-1">
+              <p class="mb-4 text-[13px] font-normal uppercase tracking-[0.35em] text-slate-600 md:text-sm">
+                FAQ
+              </p>
+              <h2
+                id="faq-heading"
+                class="font-serif text-4xl font-medium tracking-tight text-slate-900 md:text-5xl"
+              >
+                Common questions
+              </h2>
+              <p class="mt-6 font-serif text-base italic leading-relaxed text-slate-700 md:text-lg">
+                Everything you need to plan your stay with confidence. Can't find what you're looking for? We're a call away.
+              </p>
+              <a
+                href="tel:14037622281"
+                class="mt-8 inline-flex items-center gap-2.5 text-[13px] font-bold uppercase tracking-[0.18em] text-juniper-teal transition-opacity hover:opacity-70 md:text-sm"
+              >
+                <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M3 5.5a1.5 1.5 0 0 1 1.5-1.5h2.621a.75.75 0 0 1 .694.466l1.25 3a.75.75 0 0 1-.17.819L7.42 9.68A12.012 12.012 0 0 0 14.32 16.58l1.393-1.474a.75.75 0 0 1 .82-.17l3 1.25a.75.75 0 0 1 .466.694V19a1.5 1.5 0 0 1-1.5 1.5C9.716 20.5 3.5 14.284 3.5 6.5z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                1-403-762-2281
+              </a>
+            </div>
+
+            <!-- Right: accordion -->
+            <div class="divide-y divide-stone-200 border-t border-stone-200">
+
+              <details class="faq-item group">
+                <summary>
+                  <span class="font-serif text-[1.05rem] font-medium leading-snug text-slate-900 md:text-lg">
+                    What are check-in and check-out times?
+                  </span>
+                  <span class="faq-item__icon inline-flex h-7 w-7 items-center justify-center rounded-full border border-stone-300 text-slate-500 group-open:border-juniper-teal group-open:text-juniper-teal" aria-hidden="true">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq-item__body">
+                  <div class="faq-item__body-inner">
+                    <p class="text-[15px] leading-relaxed text-slate-600 md:text-base">
+                      Check-in is from <strong class="font-semibold text-slate-800">3:00 PM</strong> and check-out is by <strong class="font-semibold text-slate-800">11:00 AM</strong>. Early check-in and late check-out can often be arranged — just let us know when you book and we'll do our best to accommodate.
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="faq-item group">
+                <summary>
+                  <span class="font-serif text-[1.05rem] font-medium leading-snug text-slate-900 md:text-lg">
+                    What is your cancellation policy?
+                  </span>
+                  <span class="faq-item__icon inline-flex h-7 w-7 items-center justify-center rounded-full border border-stone-300 text-slate-500 group-open:border-juniper-teal group-open:text-juniper-teal" aria-hidden="true">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq-item__body">
+                  <div class="faq-item__body-inner">
+                    <p class="text-[15px] leading-relaxed text-slate-600 md:text-base">
+                      Reservations can be cancelled free of charge up to <strong class="font-semibold text-slate-800">48 hours</strong> before arrival. Cancellations within 48 hours or no-shows are subject to a one-night charge. Special rates and packages may have different terms — these will be clearly noted at the time of booking.
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="faq-item group">
+                <summary>
+                  <span class="font-serif text-[1.05rem] font-medium leading-snug text-slate-900 md:text-lg">
+                    Is breakfast included with my stay?
+                  </span>
+                  <span class="faq-item__icon inline-flex h-7 w-7 items-center justify-center rounded-full border border-stone-300 text-slate-500 group-open:border-juniper-teal group-open:text-juniper-teal" aria-hidden="true">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq-item__body">
+                  <div class="faq-item__body-inner">
+                    <p class="text-[15px] leading-relaxed text-slate-600 md:text-base">
+                      Standard room rates are room-only. However, our Bistro serves breakfast daily from <strong class="font-semibold text-slate-800">7:00 AM</strong>, and bed-and-breakfast packages are available when booking. We recommend the Bistro's seasonal morning menu — guests love it.
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="faq-item group">
+                <summary>
+                  <span class="font-serif text-[1.05rem] font-medium leading-snug text-slate-900 md:text-lg">
+                    Is parking available at Juniper?
+                  </span>
+                  <span class="faq-item__icon inline-flex h-7 w-7 items-center justify-center rounded-full border border-stone-300 text-slate-500 group-open:border-juniper-teal group-open:text-juniper-teal" aria-hidden="true">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq-item__body">
+                  <div class="faq-item__body-inner">
+                    <p class="text-[15px] leading-relaxed text-slate-600 md:text-base">
+                      Yes — complimentary outdoor parking is available on-site for all hotel guests. Electric vehicle charging stations are also available; please request one at the time of booking to ensure availability.
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="faq-item group">
+                <summary>
+                  <span class="font-serif text-[1.05rem] font-medium leading-snug text-slate-900 md:text-lg">
+                    How far is Juniper from downtown Banff?
+                  </span>
+                  <span class="faq-item__icon inline-flex h-7 w-7 items-center justify-center rounded-full border border-stone-300 text-slate-500 group-open:border-juniper-teal group-open:text-juniper-teal" aria-hidden="true">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq-item__body">
+                  <div class="faq-item__body-inner">
+                    <p class="text-[15px] leading-relaxed text-slate-600 md:text-base">
+                      We're perched on the slopes of Mount Norquay, approximately <strong class="font-semibold text-slate-800">1.5 km</strong> from the centre of Banff — about a 5-minute drive or a scenic 20-minute walk along Banff Avenue. A complimentary shuttle into town runs twice daily.
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="faq-item group">
+                <summary>
+                  <span class="font-serif text-[1.05rem] font-medium leading-snug text-slate-900 md:text-lg">
+                    Are pets welcome at the hotel?
+                  </span>
+                  <span class="faq-item__icon inline-flex h-7 w-7 items-center justify-center rounded-full border border-stone-300 text-slate-500 group-open:border-juniper-teal group-open:text-juniper-teal" aria-hidden="true">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq-item__body">
+                  <div class="faq-item__body-inner">
+                    <p class="text-[15px] leading-relaxed text-slate-600 md:text-base">
+                      We welcome well-behaved dogs in select ground-floor rooms for a small nightly fee. Please let us know at the time of booking so we can prepare your room. Cats and other animals are not accommodated at this time.
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA: story + reserve -->
       <section
         class="relative isolate -mt-px overflow-hidden bg-juniper-forest py-16 md:py-20 lg:py-24"
@@ -2097,7 +2142,8 @@
           </h2>
           <a
             class="mt-8 inline-flex items-center justify-center bg-white px-9 py-3.5 text-center text-[13px] font-bold uppercase tracking-[0.2em] text-juniper-teal transition-opacity hover:opacity-90 md:mt-10 md:px-12 md:text-sm md:tracking-[0.22em]"
-            href="#rooms-booking"
+            href="#"
+            data-trigger-reservation-widget
             >Reserve your stay</a
           >
         </div>
@@ -2199,7 +2245,7 @@
             >
               Explore
             </p>
-            <ul class="mt-5 space-y-3 text-sm text-slate-800">
+            <ul class="mt-5 space-y-3 text-base text-slate-800">
               <li><a class="transition-colors hover:text-juniper-purple" href="room.html">Stay</a></li>
               <li><a class="transition-colors hover:text-juniper-purple" href="#">Experiences</a></li>
               <li><a class="transition-colors hover:text-juniper-purple" href="#">Events</a></li>
@@ -2268,6 +2314,150 @@
       </div>
     </footer>
 
+    <!-- Reservations popup -->
+    <div
+      data-reservations-popup
+      class="reservations-popup"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Plan your stay"
+      aria-hidden="true"
+    >
+      <div class="reservations-popup__backdrop" aria-hidden="true"></div>
+      <div class="reservations-popup__panel">
+        <div class="reservations-popup__inner">
+          <div class="reservations-popup__card relative overflow-hidden bg-white">
+            <div class="flex items-center justify-between border-b border-stone-200 px-6 pb-5 pt-6 md:px-10 md:pb-6 md:pt-8 relative z-10">
+              <h2 class="font-serif text-2xl font-medium text-slate-900 md:text-[1.65rem]">Plan your stay</h2>
+              <button
+                type="button"
+                class="reservations-popup__close"
+                data-reservations-popup-close
+                aria-label="Close"
+              >
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="relative z-10 px-6 py-8 md:px-10 md:py-10">
+              <form action="#" method="get">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+                  <div class="text-left">
+                    <label
+                      class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
+                      for="popup-check-in"
+                      >Check in</label
+                    >
+                    <div class="relative">
+                      <input
+                        id="popup-check-in"
+                        name="check-in"
+                        type="text"
+                        class="booking-field-input"
+                        placeholder="dd / mm / yyyy"
+                        autocomplete="off"
+                      />
+                      <span
+                        class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
+                        aria-hidden="true"
+                      >
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                          <rect x="3" y="4" width="18" height="18" rx="2" />
+                          <path d="M3 10h18M8 2v4M16 2v4" stroke-linecap="round" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="text-left">
+                    <label
+                      class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
+                      for="popup-check-out"
+                      >Check out</label
+                    >
+                    <div class="relative">
+                      <input
+                        id="popup-check-out"
+                        name="check-out"
+                        type="text"
+                        class="booking-field-input"
+                        placeholder="dd / mm / yyyy"
+                        autocomplete="off"
+                      />
+                      <span
+                        class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
+                        aria-hidden="true"
+                      >
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                          <rect x="3" y="4" width="18" height="18" rx="2" />
+                          <path d="M3 10h18M8 2v4M16 2v4" stroke-linecap="round" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="text-left">
+                    <label
+                      class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
+                      for="popup-guests"
+                      >Guests</label
+                    >
+                    <div class="relative">
+                      <select id="popup-guests" name="guests" class="booking-field-select">
+                        <option value="1">1 guest</option>
+                        <option value="2" selected>2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5+ guests</option>
+                      </select>
+                      <span
+                        class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-slate-500"
+                        aria-hidden="true"
+                      >
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="text-left">
+                    <label
+                      class="mb-2 block text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[13px]"
+                      for="popup-special-code"
+                      >Special code</label
+                    >
+                    <input
+                      id="popup-special-code"
+                      name="special-code"
+                      type="text"
+                      class="booking-field-input pr-0"
+                      placeholder="Optional"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+
+                <div class="mt-10 flex flex-col items-stretch gap-6 border-t border-stone-100 pt-8 sm:flex-row sm:items-center sm:justify-between">
+                  <button
+                    type="submit"
+                    class="inline-flex w-full items-center justify-center bg-juniper-teal px-8 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 sm:w-auto md:px-10 md:text-sm md:tracking-[0.2em]"
+                  >
+                    Check availability
+                  </button>
+                  <p class="text-center text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 sm:text-right md:text-[13px]">
+                    Prefer to call?
+                    <a class="text-slate-800 underline-offset-2 hover:underline" href="tel:14037622281">1-403-762-2281</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/header-scroll.js" defer></script>
     <script src="js/room-options.js" defer></script>
     <script src="js/reviews-carousel.js" defer></script>
@@ -2276,5 +2466,7 @@
     <script src="js/hero-video.js" defer></script>
     <script src="js/story-gallery.js" defer></script>
     <script src="js/experience-showcase.js" defer></script>
+    <script src="js/reservations-popup.js" defer></script>
+    <script src="js/faq-accordion.js" defer></script>
   </body>
 </html>
