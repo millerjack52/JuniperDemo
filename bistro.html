@@ -13,14 +13,16 @@
   <body class="bistro-page overflow-x-hidden font-sans antialiased text-juniper-charcoal">
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
+    <!-- Header: modular partial — swap `data-scrolled` via JS -->
     <header
       id="site-header"
-      class="site-header py-6"
-      data-scrolled="false"
+      class="site-header"
+      data-scrolled="true"
       role="banner"
     >
+      <div class="site-header__bar">
       <nav
-        class="page-shell grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-1 md:gap-6"
+        class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-1 md:gap-6"
         aria-label="Primary"
       >
         <div
@@ -31,30 +33,47 @@
             class="header-phone shrink-0 text-[13px] font-normal uppercase tracking-wide md:text-base"
             >1-403-762-2281</a
           >
+          <!-- <button
+            type="button"
+            class="header-icon-btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors"
+            aria-label="Search"
+          >
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3-3" stroke-linecap="round" />
+            </svg>
+          </button> -->
           <div
             class="hidden items-center gap-4 uppercase tracking-wide md:flex lg:gap-6"
           >
             <a class="header-nav-link text-[13px] font-bold md:text-base" href="room.html"
               >Stay</a
             >
-            <a class="header-nav-link text-[13px] font-bold md:text-base" href="index.html"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >Experiences</a
             >
-            <a class="header-nav-link text-[13px] font-bold md:text-base" href="index.html"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >Events</a
             >
           </div>
         </div>
 
         <a
-          href="index.html"
+          href="/"
           class="justify-self-center outline-offset-4 focus-visible:outline focus-visible:outline-2"
         >
           <img
             src="images/JuniperLogoHeader.png"
             width="720"
             height="240"
-            class="h-[56px] w-auto md:h-[64px] lg:h-[60px]"
+            class="site-header__logo h-[56px] w-auto transition-[filter] duration-300 md:h-[64px] lg:h-[60px]"
             alt="Juniper Hotel"
           />
         </a>
@@ -65,10 +84,10 @@
           <div
             class="hidden items-center gap-4 uppercase tracking-wide md:flex lg:gap-6"
           >
-            <a class="header-nav-link text-[13px] font-bold md:text-base" href="index.html"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >About</a
             >
-            <a class="header-nav-link text-[13px] font-bold md:text-base" href="index.html"
+            <a class="header-nav-link text-[13px] font-bold md:text-base" href="#"
               >Stories</a
             >
             <a class="header-nav-link text-[13px] font-bold md:text-base" href="bistro.html"
@@ -77,7 +96,8 @@
           </div>
           <a
             class="header-book-btn inline-flex h-9 shrink-0 items-center justify-center rounded-full px-5 text-[13px] font-bold uppercase tracking-wide transition-colors md:text-sm"
-            href="index.html#rooms-booking"
+            href="#"
+            data-trigger-reservation-widget
             >Book</a
           >
           <button
@@ -85,6 +105,7 @@
             class="header-icon-btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors"
             aria-label="Open menu"
             aria-expanded="false"
+            aria-controls="mobile-menu"
           >
             <span class="flex flex-col gap-[4px]" aria-hidden="true">
               <span class="block h-0.5 w-4 rounded-full bg-current"></span>
@@ -94,6 +115,7 @@
           </button>
         </div>
       </nav>
+      </div>
     </header>
 
     <main id="main-content">
@@ -190,7 +212,7 @@
         </div>
       </section>
 
-      <section id="our-menus" class="bg-juniper-cream py-16 md:py-20 lg:py-24" aria-labelledby="visit-heading">
+      <section id="our-menus" class="bg-juniper-light-purple py-16 md:py-20 lg:py-24" aria-labelledby="visit-heading">
         <div class="page-shell">
           <h2 id="visit-heading" class="font-serif text-4xl font-medium tracking-tight text-slate-900 md:text-5xl">
             Our menus
@@ -295,7 +317,7 @@
         </div>
       </section>
 
-      <section id="bistro-menu" class="bg-juniper-light-purple py-16 md:py-20 lg:py-24" aria-labelledby="menu-heading">
+      <section id="bistro-menu" class="bg-juniper-cream py-16 md:py-20 lg:py-24" aria-labelledby="menu-heading">
         <div class="page-shell">
           <div class="max-w-3xl">
             <p class="text-[13px] font-normal uppercase tracking-[0.32em] text-slate-600 md:text-sm">
@@ -373,7 +395,7 @@
               <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-500">Private gatherings</p>
               <h3 class="mt-3 font-serif text-2xl text-slate-900">Mountain View Dining Groups</h3>
               <p class="mt-3 text-sm leading-relaxed text-slate-700">
-                Reserve curated family-style menus for celebrations, corporate dinners, and milestone nights.
+                Curated family-style menus for celebrations, corporate dinners, and milestone nights.
               </p>
               <button
                 type="button"
