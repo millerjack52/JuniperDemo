@@ -120,20 +120,25 @@
 
     <main id="main-content">
       <section
-        class="relative isolate flex min-h-[min(92vh,58rem)] flex-col justify-end overflow-hidden pt-28 md:pt-32"
+        class="hero hero-media-shell relative isolate flex min-h-screen flex-col justify-center overflow-hidden pt-28 md:pt-32"
         aria-labelledby="bistro-hero-heading"
       >
-        <img
-          src="images/bistro.jpg"
-          width="1600"
-          height="1200"
-          class="absolute inset-0 h-full w-full object-cover"
-          alt=""
+        <video
+          class="hero-video absolute inset-0 h-full w-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="images/bistro.webp"
+          preload="auto"
           aria-hidden="true"
-        />
+        >
+          <source src="video/Bistro%20Winter%202025.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-contour-overlay" aria-hidden="true"></div>
         <div class="pointer-events-none absolute inset-0 bg-black/45" aria-hidden="true"></div>
 
-        <div class="relative z-[1] page-shell pb-14 pt-12 md:pb-20 lg:pb-24">
+        <div class="relative z-[1] page-shell py-12 md:py-16">
           <p class="text-[13px] font-normal uppercase tracking-[0.35em] text-white/85 md:text-sm">
             Dine
           </p>
@@ -186,29 +191,44 @@
                 The kitchen balances comfort and craft: house-baked breads, charcoal-grilled proteins,
                 and seasonal produce prepared simply so the landscape still leads.
               </p>
+
+              <div class="mt-8 text-base font-normal leading-relaxed text-slate-800 md:text-[1.05rem]" aria-label="Bistro hours">
+                <h4 class="font-semibold text-xl font-serif">Hours:</h4>
+                <p class="mt-2">Breakfast: <span data-key-detail="bistro-hours-breakfast">Daily 7:00am-11:00am</span></p>
+                <p>Dinner: <span data-key-detail="bistro-hours-dinner">Wed-Sun 5:00pm-10:00pm</span></p>
+                <p>Brunch: <span data-key-detail="bistro-hours-brunch">Sat-Sun 11:30am-2:30pm</span></p>
+              </div>
+
+              <div class="mt-8 flex flex-wrap gap-3 md:gap-4">
+                <a
+                  class="inline-flex items-center justify-center bg-juniper-teal px-7 py-3 text-center text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:text-[13px]"
+                  href="tel:14037622281"
+                  data-opentable-link
+                  data-opentable-source="bistro-details"
+                >
+                  Reserve now
+                </a>
+                <a
+                  class="inline-flex items-center justify-center border border-slate-300 px-7 py-3 text-center text-[13px] font-bold uppercase tracking-[0.18em] text-slate-800 transition-colors hover:bg-slate-100 md:text-[13px]"
+                  href="#our-menus"
+                >
+                  View menus
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="grid gap-4 self-start">
-            <div class="border border-stone-200 bg-white p-5 md:p-6">
-              <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-juniper-forest md:text-xs">Breakfast</p>
-              <p class="mt-2 text-sm text-slate-800 md:text-base" data-key-detail="bistro-hours-breakfast">
-                Breakfast daily 7:00am-11:00am
-              </p>
-            </div>
-            <div class="border border-stone-200 bg-white p-5 md:p-6">
-              <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-juniper-forest md:text-xs">Dinner</p>
-              <p class="mt-2 text-sm text-slate-800 md:text-base" data-key-detail="bistro-hours-dinner">
-                Dinner Wed-Sun 5:00pm-10:00pm
-              </p>
-            </div>
-            <div class="border border-stone-200 bg-white p-5 md:p-6">
-              <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-juniper-forest md:text-xs">Brunch</p>
-              <p class="mt-2 text-sm text-slate-800 md:text-base" data-key-detail="bistro-hours-brunch">
-                Weekend brunch Sat-Sun 11:30am-2:30pm
-              </p>
-            </div>
-          </div>
+          <figure class="relative overflow-hidden rounded-sm shadow-[0_16px_48px_-12px_rgba(0,0,0,0.12)] lg:h-full">
+            <img
+              src="https://thejuniper.com/wp-content/uploads/2025/09/Juniper-final-9-of-12-scaled.jpg"
+              width="900"
+              height="1200"
+              class="block aspect-[4/3] h-full w-full object-cover lg:h-full lg:aspect-auto"
+              alt="Warm, modern bistro dining room interior"
+              loading="lazy"
+            />
+            <img class="absolute inset-0 w-full h-full object-cover z-10 opacity-70 animated-image" src="images/ImageOverlayLeft.svg" alt="Brand Pattern Footer" />
+          </figure>
         </div>
       </section>
 
@@ -229,7 +249,7 @@
               aria-controls="bistro-modal-winter-dinner"
             >
               <img
-                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2025/09/Juniper-final-9-of-12-scaled.jpg"
                 alt=""
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
@@ -244,7 +264,7 @@
               aria-controls="bistro-modal-winter-brunch"
             >
               <img
-                src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Juniper-Website-HOME-images-copy-1024x683.jpg"
                 alt=""
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
@@ -259,7 +279,7 @@
               aria-controls="bistro-modal-dessert"
             >
               <img
-                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2023/10/Deluxe-Balcony-scaled.webp"
                 alt=""
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
@@ -274,7 +294,7 @@
               aria-controls="bistro-modal-cocktails"
             >
               <img
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/hottub2-scaled.webp"
                 alt=""
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
@@ -289,7 +309,7 @@
               aria-controls="bistro-modal-wine-beer"
             >
               <img
-                src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/stayheader2-scaled.webp"
                 alt=""
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
@@ -304,7 +324,7 @@
               aria-controls="bistro-modal-mothers-day"
             >
               <img
-                src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=1200&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Adventure1-scaled.jpg"
                 alt=""
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
@@ -335,7 +355,7 @@
           <div class="mt-10 grid gap-5 md:auto-rows-fr md:grid-cols-2">
             <article class="menu-item-card flex h-full flex-col">
               <img
-                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2025/09/Juniper-final-9-of-12-scaled.jpg"
                 alt="Chef plating a pasta special"
                 class="mb-5 h-56 w-full rounded-sm object-cover md:h-64"
                 loading="lazy"
@@ -350,7 +370,7 @@
 
             <article class="menu-item-card flex h-full flex-col">
               <img
-                src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Juniper-Website-HOME-images-copy-1024x683.jpg"
                 alt="Seasonal cocktail in a coupe glass"
                 class="mb-5 h-56 w-full rounded-sm object-cover md:h-64"
                 loading="lazy"
@@ -363,49 +383,222 @@
               <p class="mt-auto pt-6 text-[11px] font-bold uppercase tracking-[0.22em] text-juniper-indigo">Evenings from 5pm</p>
             </article>
 
-            <article class="menu-item-card flex h-full flex-col">
-              <img
-                src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1200&q=80"
-                alt="Live acoustic performance in a restaurant"
-                class="mb-5 h-56 w-full rounded-sm object-cover md:h-64"
-                loading="lazy"
-              />
-              <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-500">Upcoming event</p>
-              <h3 class="mt-3 font-serif text-2xl text-slate-900">Friday Live Music Night</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-700">
-                Local acoustic sets in the lounge with shared plates and late-night dessert specials.
-              </p>
-              <button
-                type="button"
-                class="mt-auto inline-flex items-center justify-center bg-juniper-teal px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-10 md:text-xs md:tracking-[0.2em]"
-                data-modal-open="bistro-modal-events"
-                aria-controls="bistro-modal-events"
-              >
-                View event details
-              </button>
-            </article>
+            
+          </div>
+        </div>
+      </section>
 
-            <article class="menu-item-card flex h-full flex-col">
+      <section
+        id="place-to-pause"
+        class="bg-juniper-light-purple py-12 md:py-16 lg:py-20"
+        aria-labelledby="place-to-pause-heading"
+      >
+        <div class="page-shell">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="mb-3 text-[11px] font-normal uppercase tracking-[0.35em] text-slate-600 md:text-xs">
+              Juniper Bistro
+            </p>
+            <h2
+              id="place-to-pause-heading"
+              class="font-serif text-4xl font-medium leading-tight tracking-tight text-[#2D4739] md:text-5xl"
+            >
+              More than just a bistro
+            </h2>
+            <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 md:text-[1.05rem]">
+              From intimate dining moments to larger professional gatherings, Juniper Bistro offers spaces with mountain views and warm, attentive hosting.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="experience-showcase"
+        class="border-t border-stone-200/80 bg-juniper-light-purple pb-10 md:pb-24"
+        aria-labelledby="experience-showcase-heading"
+        data-active-tab="0"
+      >
+        <h2 id="experience-showcase-heading" class="sr-only">
+          Bistro gathering options
+        </h2>
+        <div class="page-shell">
+          <div class="experience-showcase__stage w-full ring-1 ring-stone-300/90 shadow-[0_24px_80px_-28px_rgba(0,0,0,0.35)]">
+            <div class="experience-showcase__media" aria-hidden="true">
               <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
-                alt="Private dining table set for a group"
-                class="mb-5 h-56 w-full rounded-sm object-cover md:h-64"
-                loading="lazy"
+                data-experience-bg="0"
+                class="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-700 ease-out"
+                src="https://thejuniper.com/wp-content/uploads/2025/09/Juniper-final-9-of-12-scaled.jpg"
+                width="2400"
+                height="1600"
+                alt=""
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
               />
-              <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-500">Private gatherings</p>
-              <h3 class="mt-3 font-serif text-2xl text-slate-900">Mountain View Dining Groups</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-700">
-                Curated family-style menus for celebrations, corporate dinners, and milestone nights.
-              </p>
-              <button
-                type="button"
-                class="mt-auto inline-flex items-center justify-center bg-juniper-teal px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 md:px-10 md:text-xs md:tracking-[0.2em]"
-                data-modal-open="bistro-modal-private-dining"
-                aria-controls="bistro-modal-private-dining"
+              <img
+                data-experience-bg="1"
+                class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 ease-out"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/stayheader2-scaled.webp"
+                width="2400"
+                height="1600"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                data-experience-bg="2"
+                class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 ease-out"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Juniper-Website-HOME-images-copy-1024x683.jpg"
+                width="2400"
+                height="1600"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                data-experience-bg="3"
+                class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 ease-out"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Adventure1-scaled.jpg"
+                width="2400"
+                height="1600"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div
+              class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-black/30"
+              aria-hidden="true"
+            ></div>
+            <div
+              class="pointer-events-none absolute inset-0 flex items-end justify-center px-4 pb-6 pt-20 md:justify-end md:px-8 md:pb-8 md:pt-24 lg:px-10 lg:pb-10"
+            >
+              <div
+                class="experience-showcase__card pointer-events-auto w-full max-w-md border border-stone-200/90 bg-white p-5 shadow-[0_28px_90px_-24px_rgba(0,0,0,0.45)] md:max-w-lg md:p-7"
               >
-                Explore private dining
-              </button>
-            </article>
+                <p class="mb-4 text-[11px] font-normal uppercase tracking-[0.35em] text-slate-500 md:text-xs">
+                  Juniper Bistro
+                </p>
+                <div
+                  class="experience-showcase__tablist grid grid-cols-2 gap-0 border-b border-stone-200 sm:grid-cols-4"
+                  role="tablist"
+                  aria-label="Bistro gathering categories"
+                >
+                  <button
+                    type="button"
+                    role="tab"
+                    id="experience-tab-0"
+                    data-experience-tab="0"
+                    aria-controls="experience-panel-0"
+                    class="experience-showcase__tab min-w-0 rounded-t-sm px-2 py-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-juniper-charcoal transition-colors hover:bg-juniper-cream/80 sm:px-3 md:px-4 md:text-[11px] md:tracking-[0.18em]"
+                  >
+                    Private Dining
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    id="experience-tab-1"
+                    data-experience-tab="1"
+                    aria-controls="experience-panel-1"
+                    class="experience-showcase__tab min-w-0 rounded-t-sm px-2 py-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-juniper-charcoal transition-colors hover:bg-juniper-cream/80 sm:px-3 md:px-4 md:text-[11px] md:tracking-[0.18em]"
+                  >
+                    Conferences
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    id="experience-tab-2"
+                    data-experience-tab="2"
+                    aria-controls="experience-panel-2"
+                    class="experience-showcase__tab min-w-0 rounded-t-sm px-2 py-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-juniper-charcoal transition-colors hover:bg-juniper-cream/80 sm:px-3 md:px-4 md:text-[11px] md:tracking-[0.18em]"
+                  >
+                    Meetings
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    id="experience-tab-3"
+                    data-experience-tab="3"
+                    aria-controls="experience-panel-3"
+                    class="experience-showcase__tab min-w-0 rounded-t-sm px-2 py-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-juniper-charcoal transition-colors hover:bg-juniper-cream/80 sm:px-3 md:px-4 md:text-[11px] md:tracking-[0.18em]"
+                  >
+                    Corporate Events
+                  </button>
+                </div>
+
+                <div class="relative mt-6 overflow-hidden">
+                  <div
+                    class="experience-showcase__track flex w-[400%] transition-transform duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] motion-reduce:transition-none"
+                    style="transform: translateX(0)"
+                  >
+                    <div
+                      id="experience-panel-0"
+                      role="tabpanel"
+                      aria-labelledby="experience-tab-0"
+                      aria-hidden="false"
+                      class="w-1/4 shrink-0 pr-1"
+                    >
+                      <h3 class="font-serif text-2xl font-normal italic leading-snug text-[#2D4739] md:text-[1.65rem]">
+                        Intimate private dining
+                      </h3>
+                      <p class="mt-3 text-sm font-light leading-relaxed text-slate-600 md:text-[0.95rem]">
+                        Host birthdays, anniversaries, and milestone dinners with curated menus, flexible layouts, and mountain views that elevate the evening.
+                      </p>
+                    </div>
+                    <div
+                      id="experience-panel-1"
+                      role="tabpanel"
+                      aria-labelledby="experience-tab-1"
+                      aria-hidden="true"
+                      class="w-1/4 shrink-0 px-1"
+                    >
+                      <h3 class="font-serif text-2xl font-normal italic leading-snug text-[#2D4739] md:text-[1.65rem]">
+                        Conference-ready spaces
+                      </h3>
+                      <p class="mt-3 text-sm font-light leading-relaxed text-slate-600 md:text-[0.95rem]">
+                        Bring your team together for strategy sessions and retreats with natural light, AV support, and seamless catering from the Bistro.
+                      </p>
+                    </div>
+                    <div
+                      id="experience-panel-2"
+                      role="tabpanel"
+                      aria-labelledby="experience-tab-2"
+                      aria-hidden="true"
+                      class="w-1/4 shrink-0 px-1"
+                    >
+                      <h3 class="font-serif text-2xl font-normal italic leading-snug text-[#2D4739] md:text-[1.65rem]">
+                        Focused meetings
+                      </h3>
+                      <p class="mt-3 text-sm font-light leading-relaxed text-slate-600 md:text-[0.95rem]">
+                        Keep meetings productive with quiet spaces, tailored coffee breaks, and service designed around your agenda.
+                      </p>
+                    </div>
+                    <div
+                      id="experience-panel-3"
+                      role="tabpanel"
+                      aria-labelledby="experience-tab-3"
+                      aria-hidden="true"
+                      class="w-1/4 shrink-0 pl-1"
+                    >
+                      <h3 class="font-serif text-2xl font-normal italic leading-snug text-[#2D4739] md:text-[1.65rem]">
+                        Corporate celebrations
+                      </h3>
+                      <p class="mt-3 text-sm font-light leading-relaxed text-slate-600 md:text-[0.95rem]">
+                        Reward teams and clients with polished dining experiences, customized beverage pairings, and memorable mountain backdrops.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  data-experience-cta
+                  class="mt-6 inline-flex w-full items-center justify-center bg-juniper-teal px-10 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 sm:w-auto md:text-xs md:tracking-[0.2em]"
+                  href="https://thejuniper.com/meet/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Find out more</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1251,10 +1444,260 @@
         </div>
       </div>
 
+      <section
+        id="social"
+        class="bg-juniper-cream pb-16 md:pb-20 lg:py-24"
+        aria-labelledby="social-heading"
+      >
+        <div class="page-shell">
+          <div class="mx-auto max-w-3xl text-center">
+            <p
+              class="mb-4 text-[13px] font-normal uppercase tracking-[0.35em] text-slate-500 md:text-sm"
+            >
+              Social
+            </p>
+            <h2
+              id="social-heading"
+              class="font-serif text-4xl font-medium tracking-tight text-slate-900 md:text-5xl"
+            >
+              Bistro on Instagram
+            </h2>
+            <p
+              class="mx-auto mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-700 md:text-lg"
+            >
+              Follow along for seasonal dishes, cocktail features, and mountain-view moments from the dining room.
+            </p>
+          </div>
+
+          <div
+            class="instagram-grid mx-auto mt-12 grid max-w-5xl grid-cols-3 gap-2 sm:gap-3 md:mt-14 md:gap-4"
+          >
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Juniper-Website-HOME-images-copy-1024x683.jpg"
+                width="900"
+                height="900"
+                alt="Guests dining in a warmly lit bistro"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2025/05/Adventure1-scaled.jpg"
+                width="900"
+                height="900"
+                alt="Plated bistro dinner with seasonal vegetables"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/stayheader2-scaled.webp"
+                width="900"
+                height="900"
+                alt="Cocktail served at the Juniper Bistro bar"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2023/12/hottub2-scaled.webp"
+                width="900"
+                height="900"
+                alt="Assorted brunch dishes on a restaurant table"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item">
+              <img
+                class="h-full w-full rounded-sm object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2025/09/Juniper-final-9-of-12-scaled.jpg"
+                width="900"
+                height="900"
+                alt="Bistro interior with mountain view windows"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="instagram-grid__item rounded-sm">
+              <img
+                class="h-full w-full object-cover"
+                src="https://thejuniper.com/wp-content/uploads/2023/10/Deluxe-Balcony-scaled.webp"
+                width="900"
+                height="900"
+                alt="Dessert and coffee at an evening table"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <p class="mt-10 text-center md:mt-12">
+            <a
+              class="text-[13px] font-bold uppercase tracking-[0.28em] text-juniper-indigo underline decoration-juniper-lavender/80 underline-offset-[6px] transition-colors hover:text-juniper-purple md:text-sm md:tracking-[0.32em]"
+              href="https://www.instagram.com/juniperbanff/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Follow @juniperbanff</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="guest-reviews"
+        class="bg-white py-16 md:py-20 lg:py-24"
+        aria-labelledby="reviews-heading"
+      >
+        <div class="page-shell">
+          <div class="mx-auto max-w-3xl text-center">
+            <p
+              class="mb-4 text-[13px] font-normal uppercase tracking-[0.32em] text-slate-500 md:text-sm"
+            >
+              Guest reviews
+            </p>
+            <h2
+              id="reviews-heading"
+              class="font-serif text-4xl font-medium tracking-tight text-slate-900 md:text-5xl"
+            >
+              What guests are saying about the Bistro
+            </h2>
+            <p
+              class="mx-auto mt-6 max-w-2xl font-serif text-base italic leading-relaxed text-slate-600 md:text-lg"
+            >
+              Real feedback from diners who joined us for breakfast, dinner, and weekend brunch.
+            </p>
+          </div>
+
+          <div
+            class="mt-12 flex items-stretch gap-2 sm:mt-14 sm:gap-4 md:items-center"
+          >
+            <button
+              type="button"
+              data-reviews-prev
+              class="inline-flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-stone-200 bg-white text-slate-400 shadow-sm transition-[opacity,colors] hover:border-stone-300 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-35 sm:h-11 sm:w-11"
+              aria-label="Show previous reviews"
+              aria-controls="reviews-scroller"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div
+              id="reviews-scroller"
+              class="scrollbar-none flex min-w-0 flex-1 snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden scroll-smooth py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:snap-none lg:gap-8"
+              tabindex="0"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Guest reviews"
+            >
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  Every dish felt thoughtful and seasonal. We came for brunch and came back for dinner the same day.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
+                    Morgan K.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  Warm team, excellent cocktails, and the mountain view at sunset made this our favorite meal in Banff.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
+                    Alex P.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <p class="text-juniper-purple" aria-hidden="true">
+                  <span class="text-base leading-none tracking-tight">★★★★★</span>
+                </p>
+                <p class="mt-4 font-serif text-base italic leading-relaxed text-slate-800 md:text-[1.05rem]">
+                  The breakfast was beautifully paced and the service was genuinely kind. Perfect start before hiking.
+                </p>
+                <div class="mt-6 flex items-center gap-3">
+                  <img
+                    class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=88&amp;h=88&amp;q=80"
+                    width="44"
+                    height="44"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="min-w-0 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-900 md:text-[13px]">
+                    Samira L.
+                    <span class="mt-0.5 block font-normal tracking-[0.18em] text-slate-500"
+                      >Google review</span
+                    >
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <button
+              type="button"
+              data-reviews-next
+              class="inline-flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-stone-200 bg-white text-slate-400 shadow-sm transition-[opacity,colors] hover:border-stone-300 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-35 sm:h-11 sm:w-11"
+              aria-label="Show more reviews"
+              aria-controls="reviews-scroller"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section class="relative isolate overflow-hidden bg-juniper-forest py-16 md:py-20 lg:py-24" aria-labelledby="reserve-heading">
         <div class="juniper-cta-pattern" aria-hidden="true"></div>
         <div class="page-shell relative z-10 text-center">
-          <h2 id="reserve-heading" class="mx-auto max-w-2xl font-serif text-3xl font-normal leading-[1.2] tracking-tight text-white md:text-4xl">
+          <h2 id="reserve-heading" class="mx-auto max-w-2xl font-semibold font-serif text-3xl font-normal leading-[1.2] tracking-tight text-white md:text-4xl">
             Save your table with a mountain view.
           </h2>
           <p class="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/85 md:text-base">
@@ -1262,14 +1705,14 @@
           </p>
           <div class="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
             <a
-              class="inline-flex min-w-[12rem] items-center justify-center bg-white px-9 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-juniper-teal transition-opacity hover:opacity-90 md:px-12 md:text-xs md:tracking-[0.22em]"
+              class="inline-flex min-w-[12rem] items-center justify-center bg-white px-9 py-3.5 text-center text-[13px] font-bold uppercase tracking-[0.2em] text-juniper-teal transition-opacity hover:opacity-90 md:px-12 md:tracking-[0.22em]"
               href="tel:14037622281"
               data-opentable-link
               data-opentable-source="bistro-cta"
               >Reserve now</a
             >
             <a
-              class="inline-flex min-w-[12rem] items-center justify-center border border-white px-9 py-3.5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-white/10 md:px-12 md:text-xs md:tracking-[0.22em]"
+              class="inline-flex min-w-[12rem] items-center justify-center border border-white px-9 py-3.5 text-center text-[13px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-white/10 md:px-12 md:tracking-[0.22em]"
               href="index.html#rooms-booking"
               >Book a stay</a
             >
@@ -1384,8 +1827,13 @@
     </footer>
 
     <script src="js/header-scroll.js" defer></script>
+    <script src="js/hero-video.js" defer></script>
+    <script src="js/animated-image.js" defer></script>
     <script src="js/key-details.js" defer></script>
+    <script src="js/section-scroll-effects.js" defer></script>
     <script src="js/bistro-menu-filter.js" defer></script>
+    <script src="js/experience-showcase.js" defer></script>
+    <script src="js/reviews-carousel.js" defer></script>
     <script src="js/opentable-tracking.js" defer></script>
     <script src="js/bistro-plan-modals.js" defer></script>
   </body>
