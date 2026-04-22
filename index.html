@@ -9,8 +9,49 @@
       content="Juniper Hotel &amp; Bistro — mountain hospitality and dining in Banff."
     />
     <link rel="stylesheet" href="dist/styles.css" />
+    <style>
+      /* Homepage-only accent remap: green -> purple brand palette */
+      .home-page {
+        --home-accent-purple: #4f5894;
+        --home-accent-purple-dark: #413b60;
+        --home-accent-purple-light: #b4b6db;
+        --home-accent-purple-overlay: rgba(79, 88, 148, 0.52);
+      }
+
+      .home-page [class*="bg-juniper-teal"] {
+        background-color: var(--home-accent-purple) !important;
+      }
+
+      .home-page [class*="text-juniper-teal"] {
+        color: var(--home-accent-purple) !important;
+      }
+
+      .home-page [class*="border-juniper-teal"] {
+        border-color: var(--home-accent-purple) !important;
+      }
+
+      .home-page [class*="hover:border-juniper-teal"]:hover {
+        border-color: var(--home-accent-purple) !important;
+      }
+
+      .home-page [class*="hover:text-juniper-forest"]:hover {
+        color: var(--home-accent-purple) !important;
+      }
+
+      .home-page [class*="text-[#2D4739]"] {
+        color: var(--home-accent-purple-dark) !important;
+      }
+
+      .home-page [class*="focus-visible:outline-[#2D4739]"]:focus-visible {
+        outline-color: var(--home-accent-purple-dark) !important;
+      }
+
+      .home-page [class*="bg-[#0a1f18]/78"] {
+        background-color: var(--home-accent-purple-overlay) !important;
+      }
+    </style>
   </head>
-  <body class="overflow-x-hidden font-sans antialiased text-juniper-charcoal">
+  <body class="home-page overflow-x-hidden font-sans antialiased text-juniper-charcoal">
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
     <!-- Header: modular partial — swap `data-scrolled` via JS -->
